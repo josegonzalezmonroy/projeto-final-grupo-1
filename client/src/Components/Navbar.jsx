@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom"
 import "./Navbar.css";
 //Precisamos importar o FontAwesome ou qualquer outro para inserir o ícone
 import { NavItens } from "./NavItens";
@@ -13,8 +12,9 @@ function Navbar() {
         </link>
         <ul>
             {NavItens.map(item =>{
+              return(
                 <li key ={item.id} className={item.NameD}></li>
-            })}
+            )})}
         </ul>
       </nav>
     </>
