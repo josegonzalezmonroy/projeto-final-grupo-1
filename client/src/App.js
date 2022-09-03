@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
-import Inicio from './Pages/Cliente/Templeites';
+import Inicio from './Pages/Cliente/Templeites/indexUI';
+
 
 
 function App() {
