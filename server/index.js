@@ -1,16 +1,15 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
-const port = 3001 //foi usada a porta 3000 para se diferenciar da porta 3000 do React
-const Product = require('./models/Product')//importando nosso arquivo Produto
 const dataBase = 'market'
+const port = 3001 //foi usada a porta 3000 para se diferenciar da porta 3000 do React
+const clientPort = 3000 //dominio do cliente
+const Product = require('./models/Product')//importando nosso arquivo Produto
 
-mongoose.connect(`mongodb+srv://jose:1234@cluster0.5z55mop.mongodb.net/${dataBase}?retryWrites=true&w=majority`)
-    .then(() => {
-        console.log('Conectado ao Mongo')
-    })
-    .catch((erro) => { console.log(erro) })
-
+const cors = require('cors')
+app.use(cors({
+    origin: `http://localhost:${clientPort}`
+}))
 
 app.get('/create', async (req, res) => {
     const product = await Product.create({
@@ -33,3 +32,10 @@ app.get('/read', async(req, res)=>{
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
+
+mongoose.connect(`mongodb+srv://jose:1234@cluster0.5z55mop.mongodb.net/${dataBase}?retryWrites=true&w=majority`)
+    .then(() => {
+        app.listen(port, () => {
+            console.log('Conectado ao Mongo')
+        })
+    }).catch((erro) => { console.log(erro) })
