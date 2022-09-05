@@ -3,7 +3,6 @@ const mongoose = require('mongoose')//mongoose para listar as collections
 const router = express.Router()
 const Product = require('../models/Product')//importando nosso arquivo Produto
 
-
 //create
 router.post('/create', async (req, res) => {
 
