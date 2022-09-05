@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import Inicio from "./Pages/Cliente/Templeites/indexUI";
-import Routes from "./Routes";
+//import Inicio from "./Pages/Cliente/Templeites/indexUI";//definido mas nunca usado
+import Rotas from "./Routes";
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       {/*<Inicio />*/}
       
-      <Routes />
+      <Rotas />
     </div>
   );
 }
