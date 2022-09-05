@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
 const dataBase = 'market'
-const port = 3001 //foi usada a porta 3000 para se diferenciar da porta 3000 do React
+const port = 3001 /*foi usada a porta 3001 para se diferenciar da porta 3000 do React
 const clientPort = 3000 //dominio do cliente
 const routerCrud = require('./routes/crud') 
 
