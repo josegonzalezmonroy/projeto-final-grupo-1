@@ -47,7 +47,7 @@ export default function Album() {
       </AppBar>
       <main>
         {/* Hero unit */}
-        <Box
+      {/*}  <Box
           sx={{
             bgcolor: 'background.paper',
             pt: 8,
@@ -82,7 +82,7 @@ export default function Album() {
         </Box>
         <Container sx={{ py: 8 }} maxWidth="md">
           {/* End hero unit */}
-          <Grid container spacing={4}>
+        {/*   <Grid container spacing={4}>
             {cards.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
                 <Card
@@ -115,8 +115,8 @@ export default function Album() {
             ))}
           </Grid>
         </Container>
-      </main>
-      {/* Footer */}
+      </main> */}
+     {/*}
       <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
         <Typography variant="h6" align="center" gutterBottom>
           Footer
@@ -132,6 +132,6 @@ export default function Album() {
         <Copyright />
       </Box>
       {/* End footer */}
-    </ThemeProvider>
+    {/*</ThemeProvider>
   );
 }  */}

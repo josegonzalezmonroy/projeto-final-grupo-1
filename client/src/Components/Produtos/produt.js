@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import { FormGroup, Table, Button, FormLabel, InputGroup } from "react-bootstrap";
-//import InputGroup from 'react-bootstrap/InputGroup';
+import {
+  Table,
+  Button,
+  } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-//import FormGroup from "react-bootstrap/FormGroup";
+//Importei o bootstrap no formulário
 
 class FormProdutos extends Component {
   state = {
@@ -11,8 +13,7 @@ class FormProdutos extends Component {
       nome: "",
       descrição: "",
       preço: 0,
-      quantidade: "",
-      categoria: "",
+      categoria: ""
     },
   };
 
@@ -20,77 +21,71 @@ class FormProdutos extends Component {
     const { model } = this.state;
     model[field] = e.target.value;
     this.setState({ model });
-    
   };
 
   create = () => {
-    
     let data = {
       id: parseInt(this.state.model.id),
       nome: parseInt(this.state.model.nome),
-      descrição:this.state.model.descrição,
+      descrição: this.state.model.descrição,
       preço: parseFloat(this.state.model.preço),
-      quantidade: parseInt(this.state.model.quantidade),
-      categoria: parseInt(this.state.model.categoria),
+      categoria: parseInt(this.state.model.categoria)
     };
     this.props.produtosCreate(data);
-  }
+  };
 
   render() {
     return (
       <Form>
-        <FormGroup>
-          <FormLabel for="name">Nome</FormLabel>
-          <InputGroup.Text
-            id="name"
-            type="text"
+        <Form.Group className="mb-3" 
+        Id="name">
+          <Form.Label for="name">Nome</Form.Label>
+          <Form.Control type="text" placeholder="Digite o nome do produto..." />
+          <Form.Text
+            className="text-muted"
             value={this.state.model.nome}
             onChange={(e) => this.setValues(e, "name")}
-          ></InputGroup.Text>
-        </FormGroup>
-        <FormGroup>
-          <div className="form-row">
-            <div className="col-md-6">
-              <FormLabel for="description">Descrição</FormLabel>
-              <InputGroup.Text
-                id="description"
-                type="text"
-                value={this.state.model.descrição}
-                onChange={(e) => this.setValues(e, "description")}
-              ></InputGroup.Text>
-            </div>
-            <div className="col-md-6">
-              <FormLabel for="quantity">Quantidade</FormLabel>
-              <InputGroup.Text
-                id="quantity"
-                type="text"
-                value={this.state.model.quantidade}
-                onChange={(e) => this.setValues(e, "quantity")}
-              ></InputGroup.Text>
-            </div>
-            <div className="mb-3">
-              <FormLabel for="price">Preço</FormLabel>
-              <InputGroup.Text
-                id="price"
-                type="text"
-                value={this.state.model.preço}
-                placeholder="R$"
-                onChange={(e) => this.setValues(e, "price")}
-              ></InputGroup.Text>
-            </div>
-            <div className="mb-3">
-              <FormLabel for="category">Categoria</FormLabel>
-              <InputGroup.Text
-                id="category"
-                type="text"
-                value={this.state.model.categoria}
-                onChange={(e) => this.setValues(e, "category")}
-              ></InputGroup.Text>
-            </div>
-          </div>
-        </FormGroup>
+          ></Form.Text>
+        </Form.Group>
+       
 
-        <Button onClick={this.create}>Cadastrar</Button>
+        <Form.Group className="mb-3" 
+        Id="description">
+          <Form.Label for="description">Descrição</Form.Label>
+          <Form.Control type="text" placeholder="Descreva o produto..." />
+          <Form.Text
+            className="text-muted"
+            value={this.state.model.descrição}
+            onChange={(e) => this.setValues(e, "description")}
+          ></Form.Text>
+        </Form.Group>
+
+        <Form.Group className="mb-3" 
+        Id="price">
+          <Form.Label for="price">Preço</Form.Label>
+          <Form.Control type="text" placeholder="Digite o preço..." />
+          <Form.Text
+            className="text-muted"
+            value={this.state.model.preço}
+            onChange={(e) => this.setValues(e, "price")}
+          ></Form.Text>
+        </Form.Group>
+
+        <Form.Group className="mb-3" 
+        Id="dcategory">
+          <Form.Label for="category">Categoria</Form.Label>
+          <Form.Control type="text" placeholder="Descreva a categoria do produto..." />
+          <Form.Text
+            className="text-muted"
+            value={this.state.model.categoria}
+            onChange={(e) => this.setValues(e, "dcategory")}
+          ></Form.Text>
+        </Form.Group>
+            
+           
+        <Button variant="primary" type="submit" onClick={this.create}> Cadastrar </Button>  
+
+        
       </Form>
     );
   }
@@ -150,24 +145,23 @@ export default class ProdutosBox extends Component {
   }
 
   create = (produtos) => {
-   const requestInfo ={
-    method: 'POST',
-    body: JSON.stringify(produtos),
-    headers: new Headers({
-      'Content-type': 'application/json'
-    })
-   };
+    const requestInfo = {
+      method: "POST",
+      body: JSON.stringify(produtos),
+      headers: new Headers({
+        "Content-type": "application/json",
+      }),
+    };
 
-fetch(this.Url, requestInfo)
-.then(response => response.json())
-.then(newProdutos =>{
-  const{ Produtos } = this.state;
-  produtos.push(newProdutos);
-  // Continuar
-}
-)
-.catch(e => console.log(e));
-  }
+    fetch(this.Url, requestInfo)
+      .then((response) => response.json())
+      .then((newProdutos) => {
+        const { Produtos } = this.state;
+        produtos.push(newProdutos);
+        // Continuar
+      })
+      .catch((e) => console.log(e));
+  };
 
   render() {
     return (
