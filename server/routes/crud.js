@@ -15,7 +15,8 @@ router.post('/create', async (req, res) => {
         name,
         description,
         price,
-        category
+        category,
+        quantit
     })
     await product.save().then(console.log(req.body, 'Produto'))
 

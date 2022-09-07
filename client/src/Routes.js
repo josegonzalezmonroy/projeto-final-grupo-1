@@ -1,4 +1,4 @@
-import React from "react";
+{/*import React from "react";
 import { BrowserRouter, Routes,  Route } from 'react-router-dom';
 
 //Painel
@@ -29,20 +29,20 @@ export default function Rotas(){
         <BrowserRouter>
         <Routes>
              {/*Rotas de Cliente*/}
-            <Route path="/" exact component ={Home}/>
+     {/*       <Route path="/" exact component ={Home}/>
             <Route path="/Produtos/:idProdutos" exact component={DetalhesProdutos}/>
 
 
             {/*Rotas de Autenticação*/}
 
-            <Route path="/Autenticao" exact component ={Paineldecontrole}/>
+       {/*}     <Route path="/Autenticao" exact component ={Paineldecontrole}/>
             {/*<Route path="/Autenticao/login" exact component ={login}/>//nao encontrei esse endereço*/}
-            <Route path="/Autenticao/Produtos" exact component ={Produtos}/>
+        {/*}    <Route path="/Autenticao/Produtos" exact component ={Produtos}/>
             <Route path="/Autenticao/Produtos/Cadastro" exact component ={CadastrarProdutos}/>
             <Route path="/Autenticao/Produtos/Editar/:idUsuario" exact component ={EditarProdutos}/>
 
             {/*Rotas de Usuários*/}
-            <Route path="/Autenticao/Usuarios" exact component ={Usuarios}/>
+      {/*}      <Route path="/Autenticao/Usuarios" exact component ={Usuarios}/>
             <Route path="/Autenticao/Usuarios/Cadastrar" exact component ={CadastrarUsuarios}/>
             <Route path="/Autenticao/Usuarios/Editar/:idUsuarios" exact component ={EditarUsuarios}/>
 
@@ -50,4 +50,5 @@ export default function Rotas(){
 
         </BrowserRouter>
     )
-}
+}    */}
+
