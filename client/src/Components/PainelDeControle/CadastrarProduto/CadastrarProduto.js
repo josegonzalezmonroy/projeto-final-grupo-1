@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-export default function CriarProduto() {
+export default function CadastrarProduto() {
 
     const [nome, setNome] = useState()
     const [preco, setPreco] = useState()
@@ -25,6 +26,7 @@ export default function CriarProduto() {
 
     return (
         <div>
+            <h2 className="font-weight-bold text-center">Cadastrar Produto</h2>
             <Form>
                 <Form.Group className="mb-3"
                     id="name">
@@ -54,8 +56,9 @@ export default function CriarProduto() {
                         defaultValue={categoria} onChange={e => setCategoria(e.target.value)} />
                     <Form.Text className="text-muted"></Form.Text>
                 </Form.Group>
-
-                <Button variant="primary" type="submit" onClick={reqPost}>Cadastrar</Button>
+                <Link to='/paineldecontrole'>
+                    <Button variant="primary" type="submit" onClick={reqPost}>Cadastrar</Button>
+                </Link>
             </Form>
         </div>
     )

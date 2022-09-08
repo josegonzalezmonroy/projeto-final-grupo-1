@@ -1,30 +1,27 @@
 import React from "react";
-import "./App.css";
-//import Inicio from "./Pages/Cliente/Templeites/indexUI";//definido mas nunca usado
-//import Rotas from "./Routes";
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Header from "./Components/Header/Index";
-import CriarProduto from "./Components/CriarProduto/CriarProduto";
-import ListarProdutos from "./Components/ListarProdutos/ListarProdutos";
+import CadastrarProduto from "./Components/PainelDeControle/CadastrarProduto/CadastrarProduto";
+import ListarProdutosCliente from "./Components/ListarProdutos/ListarProdutosCliente";
+import ListarProdutosPainel from "./Components/PainelDeControle/ListarProdutos/ListarProdutosPainel";
+import { Button } from "react-bootstrap"
+
+import "./App.css";
 
 export default function App() {
-  return (
-    <div className="container">
-      < Header title="CGJW Loja de Produtos" />
-      <br></br>
-      {/*<Inicio />*/}
-      {/*<Rotas />*/}
-      {/*<ProdutosBox />*/}
-      <div className="row">
-        <div className="col-md-6">
-          <h2 className="font-weight-bold text-center">Cadastrar Produtos</h2>
-          <CriarProduto />
-        </div>
-        <div className="col-md-6">
-          <h2 className="font-weight-bold text-center">Lista de Produtos</h2>
-          <ListarProdutos />
-        </div>
-      </div>
-    </div>
-  );
-}
+    return (
+        <BrowserRouter>
+            <nav>
+                <Link to="/"><Button variant="primary">Home</Button></Link>
+                <Link to="/paineldecontrole"><Button variant="primary">Painel de controle</Button></Link>
+            </nav>
+            < Header title="CGJW Loja de Produtos" />
 
+            <Routes>
+                <Route path="/" element={<ListarProdutosCliente />} />
+                <Route path="/paineldecontrole" element={<ListarProdutosPainel />} />
+                <Route path="/paineldecontrole/cadastrarproduto" element={<CadastrarProduto />} />
+            </Routes>
+        </BrowserRouter>
+    );
+}
