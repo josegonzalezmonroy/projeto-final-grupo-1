@@ -7,17 +7,16 @@ const productControllers = require('../controllers/products')
 //create
 router.post('/create', async (req, res) => {
     //acrescentar validações do create
-    const name = req.body.name
-    const description = req.body.description
-    const price = req.body.price
-    const category = req.body.category
+    const nome = req.body.nome
+    const descricao = req.body.descricao
+    const preco = req.body.preco
+    const categoria = req.body.categoria
 
     const product = new Product({
-        name,
-        description,
-        price,
-        category,
-        quantit
+        nome,
+        descricao,
+        preco,
+        categoria
     })
     await product.save().then(console.log(req.body, 'Produto'))
     return res.status(201).json(req.body)
@@ -25,9 +24,9 @@ router.post('/create', async (req, res) => {
 
 //read collections
 router.get('/show', async (req, res) => {
-    mongoose.connection.db.listCollections().toArray(function (err, names) {
-        console.log(names)
-        res.send(names)
+    mongoose.connection.db.listCollections().toArray(function (err, nomes) {
+        console.log(nomes)
+        res.send(nomes)
     })
     return res.status(200)
 })
@@ -56,18 +55,18 @@ router.get('/:id', async (req, res) => {
 router.put('/:id', async (req, res) => {
     const id = req.params.id
 
-    const name = req.body.name
-    const description = req.body.description
-    const price = req.body.price
-    const category = req.body.category
+    const nome = req.body.nome
+    const descricao = req.body.descricao
+    const preco = req.body.preco
+    const categoria = req.body.categoria
     try {
         const produto = await Product.findById(id)
         if (produto) {//verificações do servidor dependendo do tipo de requisição
             await produto.updateOne({
-                name,
-                description,
-                price,
-                category
+                nome,
+                descricao,
+                preco,
+                categoria
             })
             return res.json(produto)
         }
