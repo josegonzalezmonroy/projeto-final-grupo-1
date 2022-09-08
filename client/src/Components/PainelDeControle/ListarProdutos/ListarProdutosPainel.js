@@ -14,6 +14,8 @@ export default function ListarProdutosPainel() {
             .then(listaProdutos => setProdutos(listaProdutos))
     }, [])
 
+
+
     function ajustarTexto(text, max = 75) {
         if (text.length < max) {
             return text

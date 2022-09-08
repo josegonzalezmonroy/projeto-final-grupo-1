@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import {
-  Table,
+//import React, { Component } from "react";
+//import {
+{/*} Table,
   Button,
   } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 //Importei o bootstrap no formulário
 
-class FormProdutos extends Component {
+{/*class FormProdutos extends Component {
   state = {
     model: {
       id: 0,
@@ -186,3 +186,4 @@ export default class ProdutosBox extends Component {
     );
   }
 }
+*/}
