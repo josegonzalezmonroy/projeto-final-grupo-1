@@ -14,14 +14,14 @@ class FormProdutos extends Component {
       descrição: "",
       preço: 0,
       categoria: ""
-    },
-  };
+    }
+  }
 
   setValues = (e, field) => {
     const { model } = this.state;
     model[field] = e.target.value;
     this.setState({ model });
-  };
+  }
 
   create = () => {
     let data = {
@@ -30,55 +30,55 @@ class FormProdutos extends Component {
       descrição: this.state.model.descrição,
       preço: parseFloat(this.state.model.preço),
       categoria: parseInt(this.state.model.categoria)
-    };
+    }
     this.props.produtosCreate(data);
-  };
+  }
 
   render() {
     return (
       <Form>
         <Form.Group className="mb-3" 
-        Id="name">
-          <Form.Label for="name">Nome</Form.Label>
+        Id="nome">
+          <Form.Label for="nome">Nome</Form.Label>
           <Form.Control type="text" placeholder="Digite o nome do produto..." />
           <Form.Text
             className="text-muted"
             value={this.state.model.nome}
-            onChange={(e) => this.setValues(e, "name")}
+            onChange={(e) => this.setValues(e, "nome")}
           ></Form.Text>
         </Form.Group>
        
 
         <Form.Group className="mb-3" 
-        Id="description">
-          <Form.Label for="description">Descrição</Form.Label>
+        Id="descrição">
+          <Form.Label for="descrição">Descrição</Form.Label>
           <Form.Control type="text" placeholder="Descreva o produto..." />
           <Form.Text
             className="text-muted"
             value={this.state.model.descrição}
-            onChange={(e) => this.setValues(e, "description")}
+            onChange={(e) => this.setValues(e, "descriçao")}
           ></Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3" 
-        Id="price">
-          <Form.Label for="price">Preço</Form.Label>
+        Id="preço">
+          <Form.Label for="preço">Preço</Form.Label>
           <Form.Control type="text" placeholder="Digite o preço..." />
           <Form.Text
             className="text-muted"
             value={this.state.model.preço}
-            onChange={(e) => this.setValues(e, "price")}
+            onChange={(e) => this.setValues(e, "preço")}
           ></Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3" 
-        Id="dcategory">
-          <Form.Label for="category">Categoria</Form.Label>
+        Id="categoria">
+          <Form.Label for="categoria">Categoria</Form.Label>
           <Form.Control type="text" placeholder="Descreva a categoria do produto..." />
           <Form.Text
             className="text-muted"
             value={this.state.model.categoria}
-            onChange={(e) => this.setValues(e, "dcategory")}
+            onChange={(e) => this.setValues(e, "categoria")}
           ></Form.Text>
         </Form.Group>
             
@@ -102,7 +102,6 @@ class ListProdutos extends Component {
             <th>Descrição</th>
             <th>Preço</th>
             <th>Categoria</th>
-            <th>Quantidade</th>
             <th>Ações</th>
           </tr>
         </thead>
@@ -113,7 +112,6 @@ class ListProdutos extends Component {
               <td>[produtos.descrição]</td>
               <td>[produtos.preço]</td>
               <td>[produtos.categoria]</td>
-              <td>[produtos.quantidade]</td>
               <td>
                 <Button color="purple" size="sm">
                   Editar
@@ -135,13 +133,13 @@ export default class ProdutosBox extends Component {
 
   state = {
     produtos: [],
-  };
+  }
 
   componentDidMount() {
     fetch(this.Url)
       .then((response) => response.json())
       .then((produtos) => this.setState({ produtos }))
-      .catch((e) => console.log(e));
+      .catch(e => console.log(e));
   }
 
   create = (produtos) => {
@@ -150,18 +148,28 @@ export default class ProdutosBox extends Component {
       body: JSON.stringify(produtos),
       headers: new Headers({
         "Content-type": "application/json",
-      }),
+      })
     };
 
     fetch(this.Url, requestInfo)
-      .then((response) => response.json())
-      .then((newProdutos) => {
-        const { Produtos } = this.state;
+      .then(response => response.json())
+      .then(newProdutos => {
+       let { produtos } = this.state;
         produtos.push(newProdutos);
-        // Continuar
+       this.setState({ produtos });
       })
-      .catch((e) => console.log(e));
-  };
+      .catch(e => console.log(e));
+  }
+
+  delete = (id) => {
+    fetch(`${this.Url}/${id}`, {method: 'DELETE'})
+    .then(response =>response.json())
+    .then(rows => console.log(rows))
+     .catch(e => console.log(e));
+    }
+      
+    
+  
 
   render() {
     return (

@@ -5,7 +5,7 @@ import './Index.css';
 const Header=({title}) =>(
     
 <header>
-    <h1 className='font-weigt-bold'>{title?title:"CAMISAS-CGJW "}</h1>
+    <h1 className='font-weigt-bold'>{title?title:""}</h1>
 </header>
 );
 

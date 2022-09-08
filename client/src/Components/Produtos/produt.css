@@ -1,12 +1,12 @@
 
 
-FormProdutos{
+.FormProdutos{
     font-weight: bold;
     text: center ;
+    background-color: aqua;
 }
 
 
-Button{
-    background-color: aqua;
-    color: aliceblue;
+.Button{
+    background-color:darkcyan
 }
