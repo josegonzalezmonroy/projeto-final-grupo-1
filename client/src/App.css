@@ -4,5 +4,6 @@
 
 Button{
 margin: 3px;
-
+border: 0;
+background-color: aqua;
 }
