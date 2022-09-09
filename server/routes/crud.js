@@ -52,7 +52,7 @@ router.get('/:id', async (req, res) => {
 })
 
 //Update
-router.put('/:id', async (req, res) => {
+router.patch('/:id', async (req, res) => {
     const id = req.params.id
 
     const nome = req.body.nome

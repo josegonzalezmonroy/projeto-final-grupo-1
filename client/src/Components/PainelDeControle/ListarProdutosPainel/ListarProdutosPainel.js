@@ -7,14 +7,13 @@ import { Link } from 'react-router-dom'
 export default function ListarProdutosPainel() {
 
     const [produtos, setProdutos] = useState([])
+    console.log(window.location.pathname)
 
     useEffect(() => {
         fetch('http://localhost:3001/')
             .then(response => response.json())
             .then(listaProdutos => setProdutos(listaProdutos))
-    }, [])
-
-
+    })
 
     function ajustarTexto(text, max = 75) {
         if (text.length < max) {
@@ -42,7 +41,9 @@ export default function ListarProdutosPainel() {
                                     <Card.Title>{produto.nome}</Card.Title>
                                     <Card.Subtitle className="mb-2 text-muted">R$ {produto.preco}</Card.Subtitle>
                                     <Card.Text>{ajustarTexto(produto.descricao)}</Card.Text>
-                                    <Button variant="primary">Editar</Button>
+                                    <Link to={`/${produto._id}`}>
+                                        <Button variant="primary">Editar</Button>
+                                    </Link>
                                     <Button variant="primary">Apagar</Button>
                                 </Card.Body>
                             </Card>
