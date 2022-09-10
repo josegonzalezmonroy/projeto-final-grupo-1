@@ -6,7 +6,6 @@ import CadastrarProduto from "./Components/PainelDeControle/CadastrarProduto/Cad
 import ListarProdutosCliente from "./Components/ListarProdutos/ListarProdutosCliente";
 import ListarProdutosPainel from "./Components/PainelDeControle/ListarProdutosPainel/ListarProdutosPainel";
 import EditarProduto from "./Components/PainelDeControle/EditarProduto/EditarProduto";
-import ListarProdutos from "./Components/PainelDeControle/ListarProdutosPainel/ListarProdutosPainel";
 import ButtonIcon from "./Components/buttons/button";
 import "./App.css";
 
