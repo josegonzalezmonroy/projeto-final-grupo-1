@@ -6,3 +6,14 @@
 .card-item{
     margin: 0.75em;
 }
+
+.cadastro {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.produto-cadastro {
+    text-align: center;
+    padding-top: 6px;
+    font-size: 18px;
+}

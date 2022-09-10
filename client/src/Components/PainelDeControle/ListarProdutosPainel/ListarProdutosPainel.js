@@ -18,12 +18,15 @@ export default function ListarProdutosPainel() {
     return (
         <div>
             <Link to="/paineldecontrole/cadastrarproduto">
-                <Button variant="primary">
-                    Cadastrar produto
-                </Button>
+                <div class="cadastro">
+                    <Button variant="primary">
+                        Cadastrar produto
+                    </Button>
+                </div>
             </Link>
 
-            <h2 className="font-weight-bold text-center">Painel de controle</h2>
+            {/*<h2 className="font-weight-bold text-center">Painel de controle</h2>*/}
+            <h4 className=" produto-cadastro ">Cadastre um produto</h4>
             <div className="cards">
                 {produtos.map((produto) => {
                     return (

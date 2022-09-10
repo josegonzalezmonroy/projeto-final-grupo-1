@@ -6,15 +6,24 @@ import CadastrarProduto from "./Components/PainelDeControle/CadastrarProduto/Cad
 import ListarProdutosCliente from "./Components/ListarProdutos/ListarProdutosCliente";
 import ListarProdutosPainel from "./Components/PainelDeControle/ListarProdutosPainel/ListarProdutosPainel";
 import EditarProduto from "./Components/PainelDeControle/EditarProduto/EditarProduto";
-
+import ListarProdutos from "./Components/PainelDeControle/ListarProdutosPainel/ListarProdutosPainel";
+import ButtonIcon from "./Components/buttons/button";
 import "./App.css";
 
 export default function App() {
     return (
         <BrowserRouter>
-            <nav>
-                <Link to="/"><Button variant="primary">Home</Button></Link>
-                <Link to="/paineldecontrole"><Button variant="primary">Painel de controle</Button></Link>
+            <nav class="menu">
+                <div class="button-home">
+                    <Link to="/"><Button variant="primary">Home</Button></Link>
+                </div>
+                <div class="button-painel">
+                    <Link to="/paineldecontrole"><Button variant="primary">Painel de controle</Button></Link>
+                </div>
+                <div className="button-add">
+                    <ButtonIcon icon="shopping-cart" />
+                </div>
+            
             </nav>
             < Header title="CGJW Loja de Produtos" />
 

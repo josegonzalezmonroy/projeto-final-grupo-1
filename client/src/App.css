@@ -1,1 +1,27 @@
+.menu {
+    display: flex;
+}
 
+.button-home {
+    margin: 10px;
+    background-color: #0d6efd;
+    padding: 7px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+.button-painel {
+    margin: 10px;
+    background-color: #0d6efd;
+    padding: 7px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+.button-add {
+    padding-left: 50px;
+    margin: 10px;
+    font-size: 30px;      
+}
