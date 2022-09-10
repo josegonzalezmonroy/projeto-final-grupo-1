@@ -31,7 +31,6 @@ export default function EditarProduto() {
         })
     }
 
-
     return (
         <div>
             <h2 className="font-weight-bold text-center">Editar Produto</h2>
