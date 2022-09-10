@@ -2,6 +2,7 @@
     display: flex;
 }
 
+<<<<<<< HEAD
 .button-home {
     margin: 10px;
     background-color: #0d6efd;
@@ -25,3 +26,8 @@
     margin: 10px;
     font-size: 30px;      
 }
+=======
+    Button{
+        margin: 3px;
+    }
+>>>>>>> 6ca23fe6b8dc6da23497caeb8d8508f9847eabb5

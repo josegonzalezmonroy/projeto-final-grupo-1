@@ -15,6 +15,13 @@ export default function ListarProdutosPainel() {
             .then(listaProdutos => setProdutos(listaProdutos))
     })
 
+    const apagarProduto = async (urlId) => {
+   
+        fetch(`http://localhost:3001/${urlId}`, {
+           method: 'DELETE'
+          }) 
+       }
+
     return (
         <div>
             <Link to="/paineldecontrole/cadastrarproduto">
@@ -40,7 +47,7 @@ export default function ListarProdutosPainel() {
                                     <Link to={`/${produto._id}`}>
                                         <Button variant="primary">Editar</Button>
                                     </Link>
-                                    <Button variant="primary">Apagar</Button>
+                                    <Button variant="danger" onClick={() => apagarProduto(produto._id)}>Apagar</Button>
                                 </Card.Body>
                             </Card>
                         </div>
