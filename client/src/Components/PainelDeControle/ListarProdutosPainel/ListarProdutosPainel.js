@@ -15,13 +15,6 @@ export default function ListarProdutosPainel() {
             .then(listaProdutos => setProdutos(listaProdutos))
     })
 
-    function ajustarTexto(text, max = 75) {
-        if (text.length < max) {
-            return text
-        }
-        return text.slice(0, max) + '[...]'
-    }
-
     return (
         <div>
             <Link to="/paineldecontrole/cadastrarproduto">
@@ -40,7 +33,7 @@ export default function ListarProdutosPainel() {
                                 <Card.Body>
                                     <Card.Title>{produto.nome}</Card.Title>
                                     <Card.Subtitle className="mb-2 text-muted">R$ {produto.preco}</Card.Subtitle>
-                                    <Card.Text>{ajustarTexto(produto.descricao)}</Card.Text>
+                                    <Card.Text>{produto.descricao}</Card.Text>
                                     <Link to={`/${produto._id}`}>
                                         <Button variant="primary">Editar</Button>
                                     </Link>

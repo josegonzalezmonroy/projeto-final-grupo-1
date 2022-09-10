@@ -12,14 +12,7 @@ export default function ListarProdutosCliente() {
             .then(listaProdutos => setProdutos(listaProdutos))
     }, [])
 
-    function ajustarTexto(text, max = 75) {
-        if (text.length < max) {
-            return text
-        }
-        return text.slice(0, max) + '[...]'
-    }
-
-    return (
+        return (
         <div>
             <h2 className="font-weight-bold text-center">Lista de Produtos</h2>
             <div className="cards">
@@ -31,7 +24,7 @@ export default function ListarProdutosCliente() {
                             <Card.Body>
                                 <Card.Title>{produto.nome}</Card.Title>
                                 <Card.Subtitle className="mb-2 text-muted">R$ {produto.preco}</Card.Subtitle>
-                                <Card.Text>{ajustarTexto(produto.descricao)}</Card.Text>
+                                <Card.Text>{produto.descricao}</Card.Text>
                                 <Button variant="primary">Ver detalhes</Button>
                             </Card.Body>
                         </Card>
