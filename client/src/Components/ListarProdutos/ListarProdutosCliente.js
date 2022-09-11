@@ -25,7 +25,7 @@ export default function ListarProdutosCliente() {
                                 <Card.Title>{produto.nome}</Card.Title>
                                 <Card.Subtitle className="mb-2 text-muted">R$ {produto.preco}</Card.Subtitle>
                                 <Card.Text>{produto.descricao}</Card.Text>
-                                <Button variant="primary">Ver detalhes</Button>
+                                <Button variant="dark">Ver detalhes</Button>
                             </Card.Body>
                         </Card>
                     </div>

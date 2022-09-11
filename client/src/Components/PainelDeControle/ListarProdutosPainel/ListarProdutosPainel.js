@@ -16,24 +16,22 @@ export default function ListarProdutosPainel() {
     })
 
     const apagarProduto = async (urlId) => {
-   
+
         fetch(`http://localhost:3001/${urlId}`, {
-           method: 'DELETE'
-          }) 
-       }
+            method: 'DELETE'
+        })
+    }
 
     return (
         <div>
             <Link to="/paineldecontrole/cadastrarproduto">
                 <div class="cadastro">
-                    <Button variant="primary">
+                    <Button variant="dark">
                         Cadastrar produto
                     </Button>
                 </div>
             </Link>
 
-            {/*<h2 className="font-weight-bold text-center">Painel de controle</h2>*/}
-            <h4 className=" produto-cadastro ">Cadastre um produto</h4>
             <div className="cards">
                 {produtos.map((produto) => {
                     return (
@@ -45,9 +43,9 @@ export default function ListarProdutosPainel() {
                                     <Card.Subtitle className="mb-2 text-muted">R$ {produto.preco}</Card.Subtitle>
                                     <Card.Text>{produto.descricao}</Card.Text>
                                     <Link to={`/${produto._id}`}>
-                                        <Button variant="primary">Editar</Button>
+                                        <Button variant="dark">Editar</Button>
                                     </Link>
-                                    <Button variant="danger" onClick={() => apagarProduto(produto._id)}>Apagar</Button>
+                                    <Button variant="secondary" onClick={() => apagarProduto(produto._id)}>Apagar</Button>
                                 </Card.Body>
                             </Card>
                         </div>

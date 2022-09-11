@@ -13,21 +13,19 @@ export default function App() {
     return (
         <BrowserRouter>
             <nav class="menu">
-                <div class="button-home">
-                    <Link to="/"><Button variant="primary">Home</Button></Link>
-                </div>
                 <div class="button-painel">
-                    <Link to="/paineldecontrole"><Button variant="primary">Painel de controle</Button></Link>
+                    <Link to="/"><Button variant="light">Home</Button></Link>
+                    <Link to="/listaprodutos"><Button variant="light">Categoria</Button></Link>           
+                    <Link to="/paineldecontrole"><Button variant="light">Painel de controle</Button></Link>
                 </div>
                 <div className="button-add">
                     <ButtonIcon icon="shopping-cart" />
                 </div>
-            
             </nav>
             < Header title="CGJW Loja de Produtos" />
 
             <Routes>
-                <Route path="/" element={<ListarProdutosCliente />} />
+                <Route path="/listaprodutos" element={<ListarProdutosCliente />} />
                 <Route path="/paineldecontrole" element={<ListarProdutosPainel />}/>
                 <Route path="/paineldecontrole/cadastrarproduto" element={<CadastrarProduto />} />
                 <Route path="/:id" element={<EditarProduto/>} />
