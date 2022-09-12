@@ -1,16 +1,36 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, createContext } from "react"
 import { Button, Card } from "react-bootstrap"
 import './ListarProdutos.css'
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { faPlus
+//} from '@fortawesome/free-solid-svg-icons'
+
 
 export default function ListarProdutosCliente() {
 
-    const [produtos, setProdutos] = useState([])
+    const [produtos, setProdutos, produtosCart] = useState([])
 
     useEffect(() => {
         fetch('http://localhost:3001/')
             .then(response => response.json())
             .then(listaProdutos => setProdutos(listaProdutos))
     }, [])
+
+  {/*}  const CartContext = createContext();
+    
+ function addprodutoCar(id){
+const copyProdutosCart = [...produtosCart];
+const item = copyProdutosCart.find((produtos)=> produtos.id == id);
+if(item){
+    copyProdutosCart.push({id:id, qtd: 1});
+}else {
+    item.qtd =item.qtd + 1;
+
+}
+setProdutos(copyProdutosCart);
+
+ }
+function remvprodutoCar(id)*/}
 
         return (
         <div>
@@ -25,8 +45,11 @@ export default function ListarProdutosCliente() {
                                 <Card.Title>{produto.nome}</Card.Title>
                                 <Card.Subtitle className="mb-2 text-muted">R$ {produto.preco}</Card.Subtitle>
                                 <Card.Text>{produto.descricao}</Card.Text>
-                                <Button variant="dark">Ver detalhes</Button>
+                               {/*  <Button variant="dark" onClick={()=>addprodutoCar(produto._id)}><FontAwesomeIcon icon={faPlus} /></Button>
+                               <Button variant="dark" onClick={() =>remvprodutoCart(produto._id) }>Apagar do carinho</Button>
+                              <Button variant="dark">Comprar</Button>*/}
                             </Card.Body>
+                            
                         </Card>
                     </div>
                 )
