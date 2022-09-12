@@ -1,5 +1,6 @@
 .menu {
     display: flex;
+    background-color: gray;
   }
   
   .button-painel {
@@ -12,4 +13,14 @@
     padding-left: 50px;
     margin: 10px;
     font-size: 30px;      
+  }
+
+  .button-painel{
+    margin-left: 80%;
+  }
+
+  .CartShopping{
+    margin-left: 105%;
+    margin-top: -15%;
+    color: white;
   }
