@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom'
 export default function ListarProdutosPainel() {
 
     const [produtos, setProdutos] = useState([])
-    console.log(window.location.pathname)
 
     useEffect(() => {
         fetch('http://localhost:3001/')
@@ -25,7 +24,7 @@ export default function ListarProdutosPainel() {
     return (
         <div>
             <Link to="/paineldecontrole/cadastrarproduto">
-                <div class="cadastro">
+                <div className="cadastro">
                     <Button variant="dark">
                         Cadastrar produto
                     </Button>

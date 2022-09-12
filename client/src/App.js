@@ -12,8 +12,8 @@ import "./App.css";
 export default function App() {
     return (
         <BrowserRouter>
-            <nav class="menu">
-                <div class="button-painel">
+            <nav className="menu">
+                <div className="button-painel">
                     <Link to="/"><Button variant="light">Home</Button></Link>
                     <Link to="/listaprodutos"><Button variant="light">Categoria</Button></Link>           
                     <Link to="/paineldecontrole"><Button variant="light">Painel de controle</Button></Link>
