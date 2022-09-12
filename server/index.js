@@ -8,6 +8,12 @@ const rotas = require('./routes/Rotas')
 
 app.use(express.json()) 
 
+//cors para permitir o acesso do dominio do cliente no nosso servidor
+const cors = require('cors')
+app.use(cors({
+    origin: `http://localhost:${clientPort}`
+})) 
+
 //rota principal 
 app.use('/', rotas)
 
@@ -18,9 +24,4 @@ mongoose.connect(`mongodb+srv://CGJW:1234@lojaprodutos.ji5ly5i.mongodb.net/${dat
     })
 }).catch((erro) => { console.log(erro) })
 
-//cors para permitir o acesso do dominio do cliente no nosso servidor
-const cors = require('cors')
-app.use(cors({
-    origin: `http://localhost:${clientPort}`
-})) 
  
