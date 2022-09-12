@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import './CadastrarProduto.css'
 
 export default function CadastrarProduto() {
 
@@ -27,7 +28,7 @@ export default function CadastrarProduto() {
     return (
         <div>
             <h2 className="font-weight-bold text-center">Cadastrar Produto</h2>
-            <Form>
+            <Form className="formulario">
                 <Form.Group className="mb-3"
                     id="name">
                     <Form.Label>Nome</Form.Label>
@@ -52,10 +53,20 @@ export default function CadastrarProduto() {
 
                 <Form.Group className="mb-3" id="category">
                     <Form.Label>Categoria</Form.Label>
-                    <Form.Control type="text" placeholder="Descreva a categoria do produto..."
-                        defaultValue={categoria} onChange={e => setCategoria(e.target.value)} />
-                    <Form.Text className="text-muted"></Form.Text>
+                    <Form.Select
+                        value={categoria}
+                        onChange={e => setCategoria(e.target.value)}
+                        aria-label="Default select example">
+                        <option>Selecione a categoría</option>
+                        <option value="ela">Elas</option>
+                        <option value="ele">Eles</option>
+                    </Form.Select>
                 </Form.Group>
+                <Form.Group controlId="formFile" className="mb-3">
+                    <Form.Label>Insertar imagem</Form.Label>
+                    <Form.Control type="file" />
+                </Form.Group>
+
                 <Link to='/paineldecontrole'>
                     <Button variant="primary" type="submit" onClick={reqPost}>Cadastrar</Button>
                 </Link>
