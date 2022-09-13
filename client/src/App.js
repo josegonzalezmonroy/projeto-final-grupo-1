@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
 import CadastrarProduto from "./Components/PainelDeControle/CadastrarProduto/CadastrarProduto";
 import ListarProdutosCliente from "./Components/ListarProdutos/ListarProdutosCliente";
 import ListarProdutosPainel from "./Components/PainelDeControle/ListarProdutosPainel/ListarProdutosPainel";
@@ -25,6 +26,9 @@ export default function App() {
         <Route path="/:id" element={<EditarProduto />} />
         {/*} <Route path="/cart" element={<Cart />} /> */}
       </Routes>
+
+      <Footer/>
+      
     </BrowserRouter>
   );
 }
