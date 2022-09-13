@@ -2,12 +2,16 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Button, Card } from "react-bootstrap";
 import "./ListarProdutos.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { Rating, Box } from "@mui/material";
+import { Rating, Box, ButtonGroup, Badge } from "@mui/material";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import RemoveIcon from "@mui/icons-material/Remove";
+import AddIcon from "@mui/icons-material/Add";
 
 export default function ListarProdutosCliente() {
   const [produtos, setProdutos] = useState([]);
+  const [ratingValue, setRatingValue] = React.useState(0); //configurando as estrelinhas da alição dos clientes
+  //Carinho de compras
+  const [itemCount, setItemCount] = React.useState(1);
 
   useEffect(() => {
     fetch("http://localhost:3001/")
@@ -15,11 +19,23 @@ export default function ListarProdutosCliente() {
       .then((listaProdutos) => setProdutos(listaProdutos));
   }, []);
 
-  const [ratingValue, setRatingValue] = React.useState(0);
-
   return (
     <div>
-      <h2 className="font-weight-bold text-center">Lista de Produtos</h2>
+      <div className="row">
+        <h2 className="font-weight-bold text-center">Lista de Produtos</h2>
+        <div
+          style={{
+            display: "flex",
+            padding: 30,
+            marginLeft: 800,
+            marginTop: -65,
+          }}
+        >
+          <Badge color="secondary" badgeContent={itemCount}>
+            <ShoppingCartIcon />
+          </Badge>
+        </div>
+      </div>
       <div className="cards">
         {produtos.map((produto) => {
           return (
@@ -30,8 +46,9 @@ export default function ListarProdutosCliente() {
                   src="https://22825.cdn.simplo7.net/static/22825/sku/camisas-estampadas-camisa-estampada-mundo-paralelo--p-1595723319359.jpg"
                 />
                 <br></br>
-                <div style={{ display: "block", padding: 30 }}>
-                  <Box component="fieldset" mb={3} borderColor="transparent">
+                {/*Estrelas de avaliação */}
+                <div style={{ display: "block", padding: 10 }}>
+                  <Box component="fieldset" borderColor="transparent">
                     <Rating
                       name="Rating Label"
                       value={ratingValue}
@@ -41,17 +58,50 @@ export default function ListarProdutosCliente() {
                     />
                   </Box>
                 </div>
+                {/*Nome, preço e descrição dos produtos */}
                 <Card.Body>
                   <Card.Title>{produto.nome}</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">
                     R$ {produto.preco}
                   </Card.Subtitle>
                   <Card.Text>{produto.descricao}</Card.Text>
+                  <p>
+                    <strong>
+                      <i>Frete grátis</i>
+                    </strong>
+                  </p>
 
-                  <Button variant="dark">
-                    <FontAwesomeIcon icon={faPlus} />
-                  </Button>
-                  <Button variant="dark">Comprar</Button>
+                  {/*Botões de adicionar ou remover Carinho de compras*/}
+                  <div
+                    style={{
+                      display: "block",
+                      padding: 1,
+                      alignItems: "center",
+                      marginLeft: -5,
+                    }}
+                  >
+                    <div>
+                      <ButtonGroup>
+                        <Button
+                          variant="secondary"
+                          onClick={() => {
+                            setItemCount(Math.max(itemCount - 1, 0));
+                          }}
+                        >
+                          <RemoveIcon fontSize="xx-small" />
+                        </Button>
+                        <Button
+                          variant="secondary"
+                          onClick={() => {
+                            setItemCount(itemCount + 1);
+                          }}
+                        >
+                          <AddIcon fontSize="xx-small" />
+                        </Button>
+                        <Button variant="dark">Comprar</Button>
+                      </ButtonGroup>
+                    </div>
+                  </div>
                 </Card.Body>
               </Card>
             </div>
