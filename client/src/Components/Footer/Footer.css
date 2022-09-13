@@ -1,0 +1,23 @@
+.footer {
+    background-color: black;
+    color: white;
+    padding: 4em;
+    text-align: center;
+   
+    
+}
+
+.promo {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.promo li {
+    margin: 0 1em;
+}
+
+.promo svg {
+    font-size: 1.5em;
+    cursor: pointer;
+}
