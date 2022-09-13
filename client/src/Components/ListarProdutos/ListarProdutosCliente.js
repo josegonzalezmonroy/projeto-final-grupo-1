@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect, createContext } from "react";
+import { useState, useEffect } from "react";
 import { Button, Card } from "react-bootstrap";
 import "./ListarProdutos.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,7 +7,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { Rating, Box } from "@mui/material";
 
 export default function ListarProdutosCliente() {
-  const [produtos, setProdutos, produtosCart] = useState([]);
+  const [produtos, setProdutos] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:3001/")
