@@ -1,12 +1,22 @@
-/* .menu {
+*{
+    margin: 0;
+    padding: 0;
+    font-size: border-box;
+    font-family: "Roboto Slab", sans-serif;
+}
+
+.menu {
     display: flex;
-    background-color: gray;
-  } */
+    background-color: rgb(0, 0, 0);
+  }
   
   .button-painel {
+    display: flex;
+    align-items: center;
     margin: 10px 30px;;
     padding: 7px;
     border: none;
+    color: white;
   }
   
   .button-add {
@@ -17,11 +27,11 @@
 
   .button-painel{
     margin-left: 80%;
-    color:rgb(253, 253, 250)
   }
 
   .CartShopping{
-    margin-left: 105%;
-    margin-top: -15%;
+    *margin-left: 105%;
+    *margin-top: -15%;
     color: white;
   }
+
