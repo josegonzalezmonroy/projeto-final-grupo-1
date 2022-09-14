@@ -17,6 +17,8 @@ export default function App() {
       
       <Header/>
 
+      {/* <img src="Stock_Camisas.jpg" alt="stock"/> */}
+
       <Routes>
         <Route path="/listaprodutos" element={<ListarProdutosCliente />} />
         <Route path="/paineldecontrole" element={<ListarProdutosPainel />} />
