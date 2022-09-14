@@ -13,11 +13,13 @@ export default function ListarProdutosCliente() {
   //Carinho de compras
   const [itemCount, setItemCount] = React.useState(1);
 
+  const host = 'http://localhost:3001/'
+
   useEffect(() => {
-    fetch("http://localhost:3001/")
+    fetch(host)
       .then((response) => response.json())
       .then((listaProdutos) => setProdutos(listaProdutos));
-  }, []);
+  });
 
   return (
     <div>
@@ -43,8 +45,7 @@ export default function ListarProdutosCliente() {
               <Card style={{ width: "12.75rem" }}>
                 <Card.Img
                   variant="top"
-                  src="https://22825.cdn.simplo7.net/static/22825/sku/camisas-estampadas-camisa-estampada-mundo-paralelo--p-1595723319359.jpg"
-                />
+                  src={host + produto.patch} />
                 <br></br>
                 {/*Estrelas de avaliação */}
                 <div style={{ display: "block", padding: 10 }}>
@@ -80,10 +81,11 @@ export default function ListarProdutosCliente() {
                       marginLeft: -5,
                     }}
                   >
-                    <div>
+                    <div className="botoes">
                       <ButtonGroup>
                         <Button
                           variant="secondary"
+                          size="sm"
                           onClick={() => {
                             setItemCount(Math.max(itemCount - 1, 0));
                           }}
@@ -92,13 +94,16 @@ export default function ListarProdutosCliente() {
                         </Button>
                         <Button
                           variant="secondary"
+                          size="sm"
                           onClick={() => {
                             setItemCount(itemCount + 1);
                           }}
                         >
                           <AddIcon fontSize="xx-small" />
                         </Button>
-                        <Button variant="dark">Comprar</Button>
+                        <Button
+                          size="sm"
+                        variant="dark">Comprar</Button>
                       </ButtonGroup>
                     </div>
                   </div>
