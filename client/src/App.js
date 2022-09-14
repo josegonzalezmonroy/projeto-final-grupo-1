@@ -8,6 +8,7 @@ import ListarProdutosPainel from "./Components/PainelDeControle/ListarProdutosPa
 import EditarProduto from "./Components/PainelDeControle/EditarProduto/EditarProduto";
 //import Cart from "./Components/Context/Cart";
 //import CartProvider from "./Context/Cart";
+import Pagamento from "./Components/ListarProdutos/Pagamentos/Pagamento"
 import "./App.css";
 
 export default function App() {
@@ -24,7 +25,7 @@ export default function App() {
           element={<CadastrarProduto />}
         />
         <Route path="/:id" element={<EditarProduto />} />
-        {/*} <Route path="/cart" element={<Cart />} /> */}
+       <Route path="/Pagamento" element={<Pagamento />} /> 
       </Routes>
 
       <Footer/>
