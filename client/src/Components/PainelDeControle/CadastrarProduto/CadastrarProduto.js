@@ -27,7 +27,7 @@ export default function CadastrarProduto() {
 
     return (
         <div>
-            <h2 className="font-weight-bold text-center">Cadastrar Produto</h2>
+            <h2 className="font-weight-bold text-center">Cadastrar um produto</h2>
             <Form className="formulario">
                 <Form.Group className="mb-3"
                     id="name">
@@ -39,7 +39,7 @@ export default function CadastrarProduto() {
 
                 <Form.Group className="mb-3" id="price">
                     <Form.Label>Preço</Form.Label>
-                    <Form.Control type="number" placeholder="Digite o preço..."
+                    <Form.Control type="number" placeholder="Digite o preço do produto..."
                         defaultValue={preco} onChange={e => setPreco(e.target.value)} />
                     <Form.Text className="text-muted"></Form.Text>
                 </Form.Group>
@@ -57,13 +57,13 @@ export default function CadastrarProduto() {
                         value={categoria}
                         onChange={e => setCategoria(e.target.value)}
                         aria-label="Default select example">
-                        <option>Selecione a categoría</option>
+                        <option>Selecione uma categoria</option>
                         <option value="ela">Elas</option>
                         <option value="ele">Eles</option>
                     </Form.Select>
                 </Form.Group>
                 <Form.Group controlId="formFile" className="mb-3">
-                    <Form.Label>Insertar imagem</Form.Label>
+                    <Form.Label>Inserir uma imagem</Form.Label>
                     <Form.Control type="file" />
                 </Form.Group>
 
