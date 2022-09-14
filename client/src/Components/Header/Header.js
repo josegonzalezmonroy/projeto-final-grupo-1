@@ -25,7 +25,7 @@ import './Header.css';
 
           <div>
           <Link to="/listaprodutos">
-            <Button variant="dark">Categoria</Button>
+            <Button variant="dark" type='select'>Categoria</Button>
           </Link>
           </div>
 

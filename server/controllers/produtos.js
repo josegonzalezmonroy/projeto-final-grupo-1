@@ -11,15 +11,28 @@ async function cadrastrarProduto(req, res) {
     const descricao = req.body.descricao
     const preco = req.body.preco
     const categoria = req.body.categoria
-
+    const imagem = req.file.filename
+    const patch = `/images/${imagem}`
+   
     const product = new Product({
         nome,
         descricao,
         preco,
-        categoria
+        categoria,    
+        imagem,
+        patch
     })
-    await product.save().then(console.log(req.body, 'Produto'))
-    return res.status(201).json(req.body)
+    
+    //try{
+    //    if(req.file && req.file.filename){
+    //        product.imagem = req.file.filename
+    //    }
+        await product.save().then(console.log(product, 'Produto'))
+        return res.status(201).json([{'produto': product}, {'requisicao file': req.file}, {'requisicao body': req.body}])
+   // }catch (e) {
+    //    console.error(e)
+     //   return res.status(400).json()
+ //   }
 }
 
 async function mostrarProdutosPorId(req, res){
@@ -49,7 +62,7 @@ async function editarProduto(req, res){
                 nome,
                 descricao,
                 preco,
-                categoria
+                categoria,
             })
             return res.json(produto)
         }
