@@ -66,7 +66,7 @@ export default function EditarProduto() {
                     <Form.Text className="text-muted"></Form.Text>
                 </Form.Group>
                 <Link to='/paineldecontrole'>
-                    <Button variant="primary" type="submit" onClick={editar}>Editar</Button>
+                    <Button variant="dark" type="submit" onClick={editar}>Editar</Button>
                 </Link>
             </Form>
             )})}

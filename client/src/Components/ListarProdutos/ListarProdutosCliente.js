@@ -6,10 +6,11 @@ import { Rating, Box, ButtonGroup, Badge } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
+import { Link } from 'react-router-dom'
 
 export default function ListarProdutosCliente() {
   const [produtos, setProdutos] = useState([]);
-  const [ratingValue, setRatingValue] = React.useState(0); //configurando as estrelinhas da alição dos clientes
+  const [ratingValue, setRatingValue] = React.useState(0); //configurando as estrelinhas da avaliação dos clientes
   //Carinho de compras
   const [itemCount, setItemCount] = React.useState(1);
 
@@ -101,9 +102,15 @@ export default function ListarProdutosCliente() {
                         >
                           <AddIcon fontSize="xx-small" />
                         </Button>
+                        <Link to="/Pagamento">
+                          <div className="Pagamento">
                         <Button
                           size="sm"
-                        variant="dark">Comprar</Button>
+                        variant="dark">Comprar</Button> 
+                        </div>
+                    </Link>
+        
+
                       </ButtonGroup>
                     </div>
                   </div>

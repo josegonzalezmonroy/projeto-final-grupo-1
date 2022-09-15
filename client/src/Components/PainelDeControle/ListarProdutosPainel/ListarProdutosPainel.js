@@ -3,7 +3,6 @@ import { Button, Card } from "react-bootstrap"
 import './ListarProdutos.css'
 import { Link } from 'react-router-dom'
 
-
 export default function ListarProdutosPainel() {
 
     const [produtos, setProdutos] = useState([])
