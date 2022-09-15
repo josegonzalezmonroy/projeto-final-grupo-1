@@ -65,7 +65,7 @@ export default function CadastrarProduto() {
                     </Form.Select>
                 </Form.Group>
                 <Form.Group controlId="formFile" className="mb-3">
-                    <Form.Label>Insertar imagem</Form.Label>
+                    <Form.Label>Inserir uma imagem</Form.Label>
                     <Form.Control type="file" name="image"
                         onChange={e => {
                             setImagem(e.target.files[0])
