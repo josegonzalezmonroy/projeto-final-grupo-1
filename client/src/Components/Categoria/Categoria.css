@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.Categoria{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 10px;
+ 
+}
+
+.ButtonElas{
+    margin-right:50%;
+    
+}
