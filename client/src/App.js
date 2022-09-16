@@ -9,7 +9,6 @@ import ListarProdutosPainel from "./Components/PainelDeControle/ListarProdutosPa
 import EditarProduto from "./Components/PainelDeControle/EditarProduto/EditarProduto";
 import Pagamento from "./Components/ListarProdutos/Pagamentos/Pagamento";
 import Categoria from './Components/Categoria/Categoria'
-import "./App.css";
 import ProdutoElas from "./Components/Categoria/ProdutoElas/ProdutoElas";
 import ProdutoEles from "./Components/Categoria/ProdutoEles/ProdutoEles";
 import DetalhesElas from './Components/Categoria/Detalhes/DetalhesElas';
