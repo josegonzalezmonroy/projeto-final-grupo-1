@@ -8,16 +8,17 @@ export default function ProdutoElas() {
   const [produtos, setProdutos] = useState([]);
 
   const host = 'http://localhost:3001/'
+  const categoria = 'elas'
 
   useEffect(() => {
-    fetch(host)
+    fetch(host+categoria)
       .then((response) => response.json())
       .then((listaProdutos) => setProdutos(listaProdutos));
   });
 
   return (
     <div>
-      <h2>Lista de Produtos</h2>
+      <h2>Produtos para elas</h2>
 
       <div className="cards">
         {produtos.map((produto) => {

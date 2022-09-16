@@ -18,11 +18,15 @@ const Header = () => {
 
       <ul className='list'>
         <li>
-          <Link to="/categoria">
-            <p>Eles</p>
+          <Link to="/elas">
+            <p>Elas</p>
             {/*<Button variant="dark" size="sm" type='select'>Categoria</Button>*/}
           </Link>
         </li>
+        <Link to="/eles">
+            <p>Eles</p>
+            {/*<Button variant="dark" size="sm" type='select'>Categoria</Button>*/}
+          </Link>
         <li>
           <Link to="/paineldecontrole">
             <Button variant="dark" size="sm">

@@ -2,11 +2,10 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Button, Card } from "react-bootstrap";
 import { Link } from 'react-router-dom';
-import "./ProdutoEles.css";
+import "./Produtos.css";
 
-export default function ProdutoEles() {
+export default function Produtos() {
   const [produtos, setProdutos] = useState([]);
-
 
   const host = 'http://localhost:3001/'
 
@@ -18,7 +17,8 @@ export default function ProdutoEles() {
 
   return (
     <div>
-      <h2>Lista de Produtos</h2>
+      <h2>Produtos para todos</h2>
+
       <div className="cards">
         {produtos.map((produto) => {
           return (
@@ -32,8 +32,8 @@ export default function ProdutoEles() {
                   <Card.Subtitle className="mb-2 text-muted">
                     R$ {produto.preco}
                   </Card.Subtitle>
-                  <Link to="/detalheseles">
-                    <div className="produtoseles">
+                  <Link to={`/detalhes/${produto._id}`}>
+                    <div className="produtoelas">
                       <Button
                         size="sm"
                         variant="dark">Ver Detalhes
@@ -45,6 +45,7 @@ export default function ProdutoEles() {
             </div>
           );
         })}
+
       </div>
     </div>
   );

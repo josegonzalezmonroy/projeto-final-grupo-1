@@ -1,10 +1,20 @@
 const Product = require('../models/Product')
 
-async function mostrarProdutos (req, res){ 
+async function mostrarProdutos(req, res) {
     const products = await Product.find({})
     return res.json(products)
 }
- 
+
+async function mostrarProdutosEles(req, res) {
+    const products = await Product.find({ categoria: 'ele' })
+    return res.json(products)
+}
+
+async function mostrarProdutosElas(req, res) {
+    const products = await Product.find({ categoria: 'ela' })
+    return res.json(products)
+}
+
 async function cadrastrarProduto(req, res) {
     //acrescentar validações do create
     const nome = req.body.nome
@@ -13,29 +23,29 @@ async function cadrastrarProduto(req, res) {
     const categoria = req.body.categoria
     const imagem = req.file.filename
     const patch = `/images/${imagem}`
-   
+
     const product = new Product({
         nome,
         descricao,
         preco,
-        categoria,    
+        categoria,
         imagem,
         patch
     })
-    
+
     //try{
     //    if(req.file && req.file.filename){
     //        product.imagem = req.file.filename
     //    }
-        await product.save().then(console.log(product, 'Produto'))
-        return res.status(201).json([{'produto': product}, {'requisicao file': req.file}, {'requisicao body': req.body}])
-   // }catch (e) {
+    await product.save().then(console.log(product, 'Produto'))
+    return res.status(201).json([{ 'produto': product }, { 'requisicao file': req.file }, { 'requisicao body': req.body }])
+    // }catch (e) {
     //    console.error(e)
-     //   return res.status(400).json()
- //   }
+    //   return res.status(400).json()
+    //   }
 }
- 
-async function mostrarProdutosPorId(req, res){
+
+async function mostrarProdutosPorId(req, res) {
     const id = req.params.id
     try {
         const produto = await Product.findById(id)
@@ -49,7 +59,7 @@ async function mostrarProdutosPorId(req, res){
     }
 }
 
-async function editarProduto(req, res){
+async function editarProduto(req, res) {
     const id = req.params.id
     const nome = req.body.nome
     const descricao = req.body.descricao
@@ -72,7 +82,7 @@ async function editarProduto(req, res){
     }
 }
 
-async function excluirProduto(req, res){
+async function excluirProduto(req, res) {
     const id = req.params.id
     try {
         const produto = await Product.findById(id)
@@ -90,6 +100,8 @@ async function excluirProduto(req, res){
 
 module.exports = {
     mostrarProdutos,
+    mostrarProdutosEles,
+    mostrarProdutosElas,
     cadrastrarProduto,
     mostrarProdutosPorId,
     editarProduto,

@@ -5,11 +5,13 @@ const carrinho = require('../controllers/CarrinhoControler')
 
 //........................PRODUCT........................//
 router.get('/', produtos.mostrarProdutos)
+router.get('/eles', produtos.mostrarProdutosEles)
+router.get('/elas', produtos.mostrarProdutosElas)
 router.post('/create', produtos.cadrastrarProduto)
 router.get('/:id', produtos.mostrarProdutosPorId)
 router.patch('/:id', produtos.editarProduto)
 router.delete('/:id', produtos.excluirProduto)
- 
+
 //........................CARRINHO........................//
 router.get('/carrinho/lista', carrinho.mostrarCarrinho)
 router.post('/carrinho/adicionar', carrinho.adicionarItem)
