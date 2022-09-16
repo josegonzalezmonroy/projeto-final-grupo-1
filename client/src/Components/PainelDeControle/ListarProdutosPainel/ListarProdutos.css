@@ -1,8 +1,9 @@
-.cards{
-    display:flex;
+.cards {
+    display: flex;
     flex-wrap: wrap;
-    justify-content:center;
+    justify-content: center;
 }
-.card-item{
+
+.card-item {
     margin: 0.75em;
 }

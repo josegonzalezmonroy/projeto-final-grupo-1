@@ -12,7 +12,7 @@ export default function CadastrarProduto() {
     const [imagem, setImagem] = useState()
 
     const reqPost = async () => {
-        
+
         const form = new FormData()
         form.append('nome', nome)
         form.append('preco', preco)
@@ -22,7 +22,7 @@ export default function CadastrarProduto() {
 
         await fetch('http://localhost:3001/create/', {
             method: 'POST',
-            body: form 
+            body: form
         }).then(console.log(form))
     }
 
@@ -55,7 +55,7 @@ export default function CadastrarProduto() {
                 <Form.Group className="mb-3">
                     <Form.Label>Categoria</Form.Label>
                     <Form.Select
-                    value={categoria}
+                        value={categoria}
                         name="categoria"
                         onChange={e => setCategoria(e.target.value)}
                         aria-label="Default select example">
@@ -73,7 +73,7 @@ export default function CadastrarProduto() {
                         }} />
                 </Form.Group>
                 <Link to='/paineldecontrole'>
-                    <Button variant="dark" type="submit" onClick={reqPost}>Cadastrar</Button>
+                    <Button variant="dark" size="sm" type="submit" onClick={reqPost}>Cadastrar</Button>
                 </Link>
             </Form>
         </div>

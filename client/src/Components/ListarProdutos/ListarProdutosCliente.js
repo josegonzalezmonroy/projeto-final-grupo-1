@@ -1,12 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Button, Card } from "react-bootstrap";
-import "./ListarProdutos.css";
 import { Rating, Box, ButtonGroup, Badge } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import { Link } from 'react-router-dom'
+import "./ListarProdutos.css";
 
 export default function ListarProdutosCliente() {
   const [produtos, setProdutos] = useState([]);
@@ -104,12 +104,12 @@ export default function ListarProdutosCliente() {
                         </Button>
                         <Link to="/Pagamento">
                           <div className="Pagamento">
-                        <Button
-                          size="sm"
-                        variant="dark">Comprar</Button> 
-                        </div>
-                    </Link>
-        
+                            <Button
+                              size="sm"
+                              variant="dark">Comprar</Button>
+                          </div>
+                        </Link>
+
 
                       </ButtonGroup>
                     </div>

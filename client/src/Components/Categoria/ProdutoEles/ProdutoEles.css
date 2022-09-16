@@ -1,17 +1,18 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-h2{
-font-weight: bold;
-text-align: center;
+h2 {
+    font-weight: bold;
+    text-align: center;
 }
 
-.Cards{
+.Cards {
     width: 12.75rem;
 }
-Button{
+
+Button {
     font-size: xx-small;
 }

@@ -12,40 +12,36 @@ import './Header.css';
 
 const Header = () => {
   return (
-    <nav className="menu"> {/*"button-painel"*/}
-      
+    <nav className="menu">
+      <Link className="logo" to="/">
+        <img src="Logo_Camisa_Blanco_m.png" alt="Camisas" />
+      </Link>
 
-        <Link className="logo" to="/">
-          <img src="Logo_Camisa_Blanco.png" alt="Camisas" />
-        </Link>
-
-        <ul className='list'>
-          <li>
-            <Link to="/">
-              <Button variant="dark">
-                <FontAwesomeIcon icon={faHouse} /></Button>
-            </Link>
-          </li>
-          <li>
-            <Link to="/listaprodutos">
-              <Button variant="dark" type='select'>Categoria</Button>
-            </Link>
-          </li>
-          <li>
-            <Link to="/paineldecontrole">
-              <Button variant="dark">
-                <FontAwesomeIcon icon={faSun} /></Button>
-            </Link>
-          </li>
-          <li>
-            <div id="CartShopping" value="produtosCart">
-            <Button variant="dark">
+      <ul className='list'>
+        <li>
+          <Link to="/">
+            <Button variant="dark" size="sm">
+              <FontAwesomeIcon icon={faHouse} /></Button>
+          </Link>
+        </li>
+        <li>
+          <Link to="/listaprodutos">
+            <Button variant="dark" size="sm" type='select'>Categoria</Button>
+          </Link>
+        </li>
+        <li>
+          <Link to="/paineldecontrole">
+            <Button variant="dark" size="sm">
+              <FontAwesomeIcon icon={faSun} /></Button>
+          </Link>
+        </li>
+        <li>
+          <div id="CartShopping" value="produtosCart">
+            <Button variant="dark" size="sm">
               <FontAwesomeIcon icon={faShoppingCart} /></Button>
-            </div>
-          </li>
-        </ul>
-
-      
+          </div>
+        </li>
+      </ul>
     </nav >
   )
 }

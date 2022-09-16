@@ -1,8 +1,8 @@
 .footer {
     background-color: black;
     color: white;
-    padding: 4em;
-    text-align: center; 
+    padding: 0.5em 4em;
+    text-align: center;
 }
 
 .promo {
@@ -18,4 +18,12 @@
 .promo svg {
     font-size: 1.5em;
     cursor: pointer;
+}
+
+#icon {
+    color: #5F0000
+}
+
+p {
+    padding: 0, 9em;
 }

@@ -8,7 +8,7 @@ export default function ListarProdutosPainel() {
     const [produtos, setProdutos] = useState([])
     const host = 'http://localhost:3001/'
 
-    useEffect(() => { 
+    useEffect(() => {
         fetch(host)
             .then(response => response.json())
             .then(listaProdutos => setProdutos(listaProdutos))
@@ -37,15 +37,15 @@ export default function ListarProdutosPainel() {
                         <div className="card-item" key={produto._id}>
                             <Card style={{ width: '12.75rem' }}>
                                 <Card.Img variant="top" src={host + produto.patch}
-                  />
+                                />
                                 <Card.Body>
                                     <Card.Title>{produto.nome}</Card.Title>
                                     <Card.Subtitle className="mb-2 text-muted">R$ {produto.preco}</Card.Subtitle>
                                     <Card.Text>{produto.descricao}</Card.Text>
                                     <Link to={`/${produto._id}`}>
-                                        <Button variant="dark">Editar</Button>
+                                        <Button variant="dark" size="sm">Editar</Button>
                                     </Link>
-                                    <Button variant="secondary" onClick={() => apagarProduto(produto._id)}>Apagar</Button>
+                                    <Button variant="secondary" size="sm" onClick={() => apagarProduto(produto._id)}>Apagar</Button>
                                 </Card.Body>
                             </Card>
                         </div>
