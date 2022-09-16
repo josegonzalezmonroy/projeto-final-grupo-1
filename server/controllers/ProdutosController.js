@@ -1,10 +1,10 @@
 const Product = require('../models/Product')
 
-async function mostrarProdutos (req, res){
+async function mostrarProdutos (req, res){ 
     const products = await Product.find({})
     return res.json(products)
 }
-
+ 
 async function cadrastrarProduto(req, res) {
     //acrescentar validações do create
     const nome = req.body.nome
@@ -34,7 +34,7 @@ async function cadrastrarProduto(req, res) {
      //   return res.status(400).json()
  //   }
 }
-
+ 
 async function mostrarProdutosPorId(req, res){
     const id = req.params.id
     try {

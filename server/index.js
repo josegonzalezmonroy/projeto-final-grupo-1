@@ -1,21 +1,16 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')//cors para permitir o acesso do dominio do cliente no nosso servidor
 const app = express()
 const host = 'http://localhost:'
 const port = 3001 //foi usada a porta 3001 para se diferenciar da porta 3000 do React
 const clientPort = 3000 //dominio do cliente
 const dataBase = 'camisas'
-//const path = require('path')//o metodo path é util para trabalhar com rotas de arquivos
-const rotas = require('./controllers/routes/Rotas')
-const upload = require('./controllers/carregarImagem')
+const rotas = require('./routes/Rotas')
+const upload = require('./controllers/CarregarImagem')
 
 app.use(express.json())
-
-//cors para permitir o acesso do dominio do cliente no nosso servidor
-const cors = require('cors')
-app.use(cors({
-    origin: `${host}${clientPort}`
-}))
+app.use(cors({origin: `${host}${clientPort}`}))
 
 //multer
 app.use(upload.multerControler)
