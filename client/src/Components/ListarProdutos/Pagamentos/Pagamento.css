@@ -17,4 +17,12 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    white-space: 2px;
+}
+
+.Button{
+    margin-top: 6px;
+    padding:5px;
+
+    
 }

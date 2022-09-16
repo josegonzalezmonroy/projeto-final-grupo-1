@@ -7,7 +7,6 @@ import "./ProdutoElas.css";
 export default function ProdutoElas() {
   const [produtos, setProdutos] = useState([]);
 
-
   const host = 'http://localhost:3001/'
 
   useEffect(() => {
@@ -33,8 +32,8 @@ export default function ProdutoElas() {
                   <Card.Subtitle className="mb-2 text-muted">
                     R$ {produto.preco}
                   </Card.Subtitle>
-                  <Link to="/produtoselas">
-                    <div className="produtoselas">
+                  <Link to={`/detalhes/${produto._id}`}>
+                    <div className="produtoelas">
                       <Button
                         size="sm"
                         variant="dark">Ver Detalhes

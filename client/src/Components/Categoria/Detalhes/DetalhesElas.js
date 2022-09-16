@@ -1,32 +1,35 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Button, Card } from "react-bootstrap";
-//import "./ListarProdutos.css";
+//import "./ListarProdutos.css"; bla bla bla
 import { Rating, Box, ButtonGroup, Badge } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "./DetalhesElas.css";
-
+//ola
 export default function DtalhesElas() {
   const [produtos, setProdutos] = useState([]);
   const [ratingValue, setRatingValue] = React.useState(0); //configurando as estrelinhas da avaliação dos clientes
   //Carinho de compras
   const [itemCount, setItemCount] = React.useState(1);
 
-  const host = 'http://localhost:3001/'
+  const host = "http://localhost:3001/";
 
   useEffect(() => {
-    fetch(host)
+    fetch(host + id)
       .then((response) => response.json())
       .then((listaProdutos) => setProdutos(listaProdutos));
   });
 
+  const urlId = window.location.pathname;
+  const id = urlId.substring(10, urlId.length); //Para pegar um elemento e seus detalhes
+
   return (
     <div>
       <div className="row">
-        <h2 className="font-weight-bold text-center">Lista de Produtos</h2>
+        <h2 className="font-weight-bold text-center">Detalhes do produto</h2>
         <div
           style={{
             display: "flex",
@@ -45,9 +48,7 @@ export default function DtalhesElas() {
           return (
             <div className="card-item" key={produto._id}>
               <Card style={{ width: "12.75rem" }}>
-                <Card.Img
-                  variant="top"
-                  src={host + produto.patch} />
+                <Card.Img variant="top" src={host + produto.patch} />
                 <br></br>
                 {/*Estrelas de avaliação */}
                 <div style={{ display: "block", padding: 10 }}>
@@ -105,13 +106,11 @@ export default function DtalhesElas() {
                         </Button>
                         <Link to="/Pagamento">
                           <div className="Pagamento">
-                        <Button
-                          size="sm"
-                        variant="dark">Comprar</Button> 
-                        </div>
-                    </Link>
-        
-
+                            <Button size="sm" variant="dark">
+                              Comprar
+                            </Button>
+                          </div>
+                        </Link>
                       </ButtonGroup>
                     </div>
                   </div>

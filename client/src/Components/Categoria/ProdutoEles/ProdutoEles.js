@@ -32,7 +32,7 @@ export default function ProdutoEles() {
                   <Card.Subtitle className="mb-2 text-muted">
                     R$ {produto.preco}
                   </Card.Subtitle>
-                  <Link to="/produtoseles">
+                  <Link to="/detalheseles">
                     <div className="produtoseles">
                       <Button
                         size="sm"

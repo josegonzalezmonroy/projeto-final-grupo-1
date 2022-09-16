@@ -5,8 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faShoppingCart,
-  faSun,
-  faHouse,
+  faSun  
 } from "@fortawesome/free-solid-svg-icons";
 import './Header.css';
 
@@ -14,19 +13,14 @@ const Header = () => {
   return (
     <nav className="menu">
       <Link className="logo" to="/">
-        <img src="Logo_Camisa_Blanco_m.png" alt="Camisas" />
+        <img src="Logo_Camisa_Blanco_m.png" alt="Camisas" /> {/*Licença da imagem "alt"*/}
       </Link>
 
       <ul className='list'>
         <li>
-          <Link to="/">
-            <Button variant="dark" size="sm">
-              <FontAwesomeIcon icon={faHouse} /></Button>
-          </Link>
-        </li>
-        <li>
-          <Link to="/listaprodutos">
-            <Button variant="dark" size="sm" type='select'>Categoria</Button>
+          <Link to="/categoria">
+            <p>Eles</p>
+            {/*<Button variant="dark" size="sm" type='select'>Categoria</Button>*/}
           </Link>
         </li>
         <li>

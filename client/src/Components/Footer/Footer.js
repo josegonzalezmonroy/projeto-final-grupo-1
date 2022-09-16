@@ -8,7 +8,8 @@ import {
 import './Footer.css';
 
 const Footer = () => {
-    return (<footer className='footer'>
+    return (
+    <footer className='footer'>
 
         <ul className='promo'>
             <li id="icon">
