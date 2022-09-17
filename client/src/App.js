@@ -7,10 +7,11 @@ import CadastrarProduto from "./Components/PainelDeControle/CadastrarProduto/Cad
 import ListarProdutosPainel from "./Components/PainelDeControle/ListarProdutosPainel/ListarProdutosPainel";
 import EditarProduto from "./Components/PainelDeControle/EditarProduto/EditarProduto";
 import Pagamento from "./Components/PainelDeControle/Pagamentos/Pagamento";
-import ProdutoElas from "./Components/Produtos/ProdutoElas/ProdutoElas";
-import ProdutoEles from "./Components/Produtos/ProdutoEles/ProdutoEles";
+//import ProdutoElas from "./Components/Produtos/ProdutoElas/ProdutoElas";
+//import ProdutoEles from "./Components/Produtos/ProdutoEles/ProdutoEles";
 import Detalhes from "./Components/Produtos/Detalhes/Detalhes";
-import Produtos from "./Components/Produtos/Produtos Geral/Produtos";
+import ProdutosAmbos from "./Components/Produtos/ProdutosAmbos/ProdutosAmbos"
+import ProdutosGeral from "./Components/Produtos/ProdutosGeral/ProdutosGeral";
 
 export default function App() {
   return (
@@ -19,10 +20,10 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/listaprodutos" element={<Produtos />} />
+        <Route path="/listaprodutos" element={<ProdutosGeral/>} />
         <Route path="/detalhes/:id" element={<Detalhes />} />
-        <Route path="/eles" element={<ProdutoEles />} />
-        <Route path="/elas" element={<ProdutoElas />} />
+        <Route path="/eles" element={<ProdutosAmbos/>} />
+        <Route path="/elas" element={<ProdutosAmbos/>} />
 
         <Route path="/paineldecontrole" element={<ListarProdutosPainel />} />
         <Route

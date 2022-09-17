@@ -19,11 +19,11 @@ async function mostrarProdutosPorCategoria(req, res) {
 }
 
 async function cadrastrarProduto(req, res) {
+    try {
     const { nome, descricao, preco, categoria } = req.body
     const imagem = req.file.filename
     const patch = `/images/${imagem}`
 
-    try {
         const product = new Product({
             nome,
             descricao,
@@ -41,7 +41,7 @@ async function cadrastrarProduto(req, res) {
             res.status(404).json({ mensagem: 'Campos requeridos' })
     } catch (e) {
         console.error(e, 'erro')
-        return res.status(400).json()
+        return res.status(400).json({mensagem: 'A requisicao deve conter uma imagem'})
     }
 }
 
@@ -62,12 +62,12 @@ async function mostrarProdutosPorId(req, res) {
 }
 
 async function editarProduto(req, res) {
+    try {
     const { id } = req.params
     const { nome, descricao, preco, categoria } = req.body
     const imagem = req.file.filename
     const patch = `/images/${imagem}`
 
-    try {
         const produto = await Product.findById(id)
         nome && descricao && preco && categoria && imagem && patch ?
 
@@ -82,7 +82,7 @@ async function editarProduto(req, res) {
             res.status(404).json({ mensagem: 'Campos requeridos' })
     } catch (e) {
         console.error(e)
-        return res.status(400).json()
+        return res.status(400).json({mensagem: 'A requisicao deve conter uma imagem'})
     }
 }
 

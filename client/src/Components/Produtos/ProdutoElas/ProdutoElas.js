@@ -8,7 +8,7 @@ export default function ProdutoElas() {
   const [produtos, setProdutos] = useState([]);
 
   const host = 'http://localhost:3001/'
-  const categoria = 'elas'
+  const categoria = 'categoria/elas'
 
   useEffect(() => {
     fetch(host+categoria)

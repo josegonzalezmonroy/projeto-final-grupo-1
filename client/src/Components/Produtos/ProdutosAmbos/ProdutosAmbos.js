@@ -2,23 +2,28 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Button, Card } from "react-bootstrap";
 import { Link } from 'react-router-dom';
-import "./Produtos.css";
+import "./ProdutosAmbos.css";
 
 export default function Produtos() {
   const [produtos, setProdutos] = useState([]);
 
+  const link = window.location.pathname;
+  const categoria = link.substring(1, link.length)
+
   const host = 'http://localhost:3001/'
+  const rota = 'categoria/'
 
   useEffect(() => {
-    fetch(host)
+    fetch(host+rota+categoria)
       .then((response) => response.json())
       .then((listaProdutos) => setProdutos(listaProdutos));
   });
 
   return (
     <div>
-      <h2>Veja os nossos produtos</h2>
-<div className="cards">
+      <h2>{`Produtos para ${categoria}`}</h2>
+
+      <div className="cards">
         {produtos.map((produto) => {
           return (
             <div className="card-item" key={produto._id}>

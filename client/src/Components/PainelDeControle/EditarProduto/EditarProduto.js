@@ -20,13 +20,13 @@ export default function EditarProduto() {
     })
 
     const editar = async () => {
-        const contatoModificado = {
+        const produtoModificado = {
             nome, preco, descricao, categoria
         }
 
         await fetch(`http://localhost:3001${urlId}`, {
             method: 'PATCH',
-            body: JSON.stringify(contatoModificado),
+            body: JSON.stringify(produtoModificado),
             headers: { "Content-type": "application/json; charset=UTF-8" }
         })
     }

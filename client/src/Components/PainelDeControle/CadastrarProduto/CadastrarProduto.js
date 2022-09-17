@@ -60,8 +60,8 @@ export default function CadastrarProduto() {
                         onChange={e => setCategoria(e.target.value)}
                         aria-label="Default select example">
                         <option>Selecione uma categoria</option>
-                        <option value="ela">Elas</option>
-                        <option value="ele">Eles</option>
+                        <option value="elas">Elas</option>
+                        <option value="eles">Eles</option>
                     </Form.Select>
                 </Form.Group>
                 <Form.Group controlId="formFile" className="mb-3">

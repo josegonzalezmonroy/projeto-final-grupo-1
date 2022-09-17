@@ -2,25 +2,23 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Button, Card } from "react-bootstrap";
 import { Link } from 'react-router-dom';
-import "./ProdutoEles.css";
+import "./ProdutosGeral.css";
 
-export default function ProdutoEles() {
+export default function ProdutosGeral() {
   const [produtos, setProdutos] = useState([]);
 
-
   const host = 'http://localhost:3001/'
-  const categoria = 'categoria/eles'
 
   useEffect(() => {
-    fetch(host+categoria)
+    fetch(host)
       .then((response) => response.json())
       .then((listaProdutos) => setProdutos(listaProdutos));
   });
 
   return (
     <div>
-      <h2>Produtos para eles</h2>
-      <div className="cards">
+      <h2>Veja os nossos produtos</h2>
+<div className="cards">
         {produtos.map((produto) => {
           return (
             <div className="card-item" key={produto._id}>
@@ -34,7 +32,7 @@ export default function ProdutoEles() {
                     R$ {produto.preco}
                   </Card.Subtitle>
                   <Link to={`/detalhes/${produto._id}`}>
-                    <div className="produtoseles">
+                    <div className="produtoelas">
                       <Button
                         size="sm"
                         variant="dark">Ver Detalhes
@@ -46,6 +44,7 @@ export default function ProdutoEles() {
             </div>
           );
         })}
+
       </div>
     </div>
   );
