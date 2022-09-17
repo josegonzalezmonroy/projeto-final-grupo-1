@@ -17,9 +17,8 @@ export default function Produtos() {
 
   return (
     <div>
-      <h2>Produtos para todos</h2>
-
-      <div className="cards">
+      <h2>Veja os nossos produtos</h2>
+<div className="cards">
         {produtos.map((produto) => {
           return (
             <div className="card-item" key={produto._id}>

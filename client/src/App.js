@@ -19,11 +19,10 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/listaprodutos" element={<Produtos/>} />
-        <Route path="/detalhes/:id" element={<Detalhes/>} />
+        <Route path="/listaprodutos" element={<Produtos />} />
+        <Route path="/detalhes/:id" element={<Detalhes />} />
         <Route path="/eles" element={<ProdutoEles />} />
         <Route path="/elas" element={<ProdutoElas />} />
-        
 
         <Route path="/paineldecontrole" element={<ListarProdutosPainel />} />
         <Route

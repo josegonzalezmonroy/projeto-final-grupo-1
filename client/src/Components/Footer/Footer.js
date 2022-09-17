@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Button } from "react-bootstrap";
 import {
     faTruckFast,
     faCreditCard,
+    faSun 
 } from "@fortawesome/free-solid-svg-icons";
 import './Footer.css';
 
@@ -24,6 +26,13 @@ const Footer = () => {
             <li>
                 <span>6X sem juros no cartão</span>
             </li>
+
+            <li id="icon-faSun">
+          <Link to="/paineldecontrole">
+            <Button variant="" size="sm">
+              <FontAwesomeIcon icon={faSun} /></Button>
+          </Link>
+          </li>
         </ul>
 
         <Link className="logo" to="/">

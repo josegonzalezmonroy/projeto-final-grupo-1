@@ -5,8 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faShoppingCart,
-  faSun  
-} from "@fortawesome/free-solid-svg-icons";
+   } from "@fortawesome/free-solid-svg-icons";
 import './Header.css';
 
 const Header = () => {
@@ -27,12 +26,6 @@ const Header = () => {
             <p>Eles</p>
             {/*<Button variant="dark" size="sm" type='select'>Categoria</Button>*/}
           </Link>
-        <li>
-          <Link to="/paineldecontrole">
-            <Button variant="dark" size="sm">
-              <FontAwesomeIcon icon={faSun} /></Button>
-          </Link>
-        </li>
         <li>
           <div id="CartShopping" value="produtosCart">
             <Button variant="dark" size="sm">
