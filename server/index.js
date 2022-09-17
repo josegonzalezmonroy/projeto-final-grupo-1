@@ -14,9 +14,8 @@ app.use(cors({origin: `${host}${clientPort}`}))
 
 //multer
 app.use(upload.multerControler)
-app.post('/upload', upload.uploadImage)
 
-//rotas
+//rotas 
 app.use(rotas)
 
 //arquivos estaticos 

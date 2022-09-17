@@ -2,14 +2,15 @@ const express = require('express')
 const router = express.Router()
 const produtos = require('../controllers/ProdutosController')
 const carrinho = require('../controllers/CarrinhoControler')
+const { update } = require('../controllers/CarregarImagem')
 
 //........................PRODUCT........................//
 router.get('/', produtos.mostrarProdutos)
-router.get('/eles', produtos.mostrarProdutosEles)
-router.get('/elas', produtos.mostrarProdutosElas)
+router.get('/categoria/:categoria', produtos.mostrarProdutosPorCategoria)
 router.post('/create', produtos.cadrastrarProduto)
 router.get('/:id', produtos.mostrarProdutosPorId)
 router.patch('/:id', produtos.editarProduto)
+router.patch('/editsem/:id', produtos.editarProdutoSem) //edit sem img
 router.delete('/:id', produtos.excluirProduto)
 
 //........................CARRINHO........................//
