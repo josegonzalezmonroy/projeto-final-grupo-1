@@ -2,48 +2,45 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
-import {
-    faTruckFast,
-    faCreditCard,
-    faSun 
-} from "@fortawesome/free-solid-svg-icons";
+import { faTruckFast, faCreditCard, faSun } from "@fortawesome/free-solid-svg-icons";
 import './Footer.css';
+import logoFooter from '../Images/Logo_Camisa_Blanco_p.png'
 
 const Footer = () => {
     return (
-    <footer className='footer'>
+        <footer className='footer'>
 
-        <ul className='promo'>
-            <li id="icon">
-                <FontAwesomeIcon icon={faTruckFast} />
-            </li>
-            <li>
-                <span>Frete Grátis nas compras acima de R$ 399</span>
-            </li>
-            <li id="icon">
-                <FontAwesomeIcon icon={faCreditCard} />
-            </li>
-            <li>
-                <span>6X sem juros no cartão</span>
-            </li>
+            <ul className='promo'>
+                <li id="icon">
+                    <FontAwesomeIcon icon={faTruckFast} />
+                </li>
+                <li>
+                    <span>Frete Grátis nas compras acima de R$ 399</span>
+                </li>
+                <li id="icon">
+                    <FontAwesomeIcon icon={faCreditCard} />
+                </li>
+                <li>
+                    <span>6X sem juros no cartão</span>
+                </li>
 
-            <li id="icon-faSun">
-          <Link to="/paineldecontrole">
-            <Button variant="" size="sm">
-              <FontAwesomeIcon icon={faSun} /></Button>
-          </Link>
-          </li>
-        </ul>
+                <li id="icon-faSun">
+                    <Link to="/paineldecontrole">
+                        <Button variant="" size="sm">
+                            <FontAwesomeIcon icon={faSun} /></Button>
+                    </Link>
+                </li>
+            </ul>
 
-        <Link className="logo" to="/">
-            <img src="Logo_Camisa_Blanco_p.png" alt="Camisas" />
-        </Link>
-        <br></br>
-        <p>
-            &copy; 2022
-        </p>
+            <Link className="logo" to="/">
+                <img src={logoFooter} alt="Camisas" />
+            </Link>
+            <br></br>
+            <p>
+                &copy; 2022
+            </p>
 
-    </footer >)
+        </footer >)
 }
 
 export default Footer

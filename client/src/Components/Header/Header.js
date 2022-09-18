@@ -3,16 +3,15 @@ import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faShoppingCart,
-   } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import './Header.css';
+import logo from '../Images/Logo_Camisa_Blanco_m.png'
 
 const Header = () => {
   return (
     <nav className="menu">
       <Link className="logo" to="/">
-        <img src="Logo_Camisa_Blanco_m.png" alt="Camisas" /> {/*Licença da imagem "alt"*/}
+        <img src={logo} alt="Camisas" /> {/*Licença da imagem "alt"*/}
       </Link>
 
       <ul className='list'>
@@ -22,8 +21,8 @@ const Header = () => {
           </Link>
         </li>
         <Link to="/eles">
-            <p>Eles</p>
-          </Link>
+          <p>Eles</p>
+        </Link>
         <li>
           <div id="CartShopping" value="produtosCart">
             <Button variant="dark" size="sm">
@@ -35,4 +34,4 @@ const Header = () => {
   )
 }
 
-export default Header;
+export default Header

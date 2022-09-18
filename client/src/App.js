@@ -7,8 +7,6 @@ import CadastrarProduto from "./Components/PainelDeControle/CadastrarProduto/Cad
 import ListarProdutosPainel from "./Components/PainelDeControle/ListarProdutosPainel/ListarProdutosPainel";
 import EditarProduto from "./Components/PainelDeControle/EditarProduto/EditarProduto";
 import Pagamento from "./Components/PainelDeControle/Pagamentos/Pagamento";
-//import ProdutoElas from "./Components/Produtos/ProdutoElas/ProdutoElas";
-//import ProdutoEles from "./Components/Produtos/ProdutoEles/ProdutoEles";
 import Detalhes from "./Components/Produtos/Detalhes/Detalhes";
 import ProdutosAmbos from "./Components/Produtos/ProdutosAmbos/ProdutosAmbos"
 import ProdutosGeral from "./Components/Produtos/ProdutosGeral/ProdutosGeral";
@@ -17,17 +15,16 @@ export default function App() {
   return (
     <BrowserRouter>
       <Header />
-
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/listaprodutos" element={<ProdutosGeral/>} />
+        <Route path="/listaprodutos" element={<ProdutosGeral />} />
         <Route path="/detalhes/:id" element={<Detalhes />} />
-        <Route path="/eles" element={<ProdutosAmbos/>} />
-        <Route path="/elas" element={<ProdutosAmbos/>} />
+        <Route path="/eles" element={<ProdutosAmbos />} />
+        <Route path="/elas" element={<ProdutosAmbos />} />
         <Route path="/paineldecontrole" element={<ListarProdutosPainel />} />
-        <Route path="/paineldecontrole/cadastrarproduto" element={<CadastrarProduto />}/>
+        <Route path="/paineldecontrole/cadastrarproduto" element={<CadastrarProduto />} />
         <Route path="/:id" element={<EditarProduto />} />
-        <Route path="/pagamento" element={<Pagamento />} /> 
+        <Route path="/pagamento" element={<Pagamento />} />
       </Routes>
 
       <Footer />

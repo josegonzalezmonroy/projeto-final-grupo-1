@@ -73,9 +73,9 @@ export default function CadastrarProduto() {
                         }} />
                 </Form.Group>
                 <div className="bot_Cad">
-                <Link to='/paineldecontrole'>
-                    <Button variant="dark" size="sm" type="submit" onClick={reqPost}>Cadastrar</Button>
-                </Link>
+                    <Link to='/paineldecontrole'>
+                        <Button variant="dark" size="sm" type="submit" onClick={reqPost}>Cadastrar</Button>
+                    </Link>
                 </div>
             </Form>
         </div>

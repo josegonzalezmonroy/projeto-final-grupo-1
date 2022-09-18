@@ -15,6 +15,7 @@ async function mostrarProdutosPorCategoria(req, res) {
             res.status(404).json({ mensagem: 'Categoria nao encontrada' })
     } catch (e) {
         console.error(e, 'erro')
+        return res.status(400)
     }
 }
 
@@ -60,7 +61,7 @@ async function mostrarProdutosPorId(req, res) {
             res.status(400).json({ mensagem: 'Formato de id nao valido' })
     }
 }
-
+  
 async function editarProduto(req, res) {
     try {
     const { id } = req.params

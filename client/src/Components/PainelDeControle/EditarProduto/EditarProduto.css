@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.formulario {
+    width: 50%;
+    margin: auto;
+}
+
+.bot_Cad{
+    margin: 1em;
+}
+
+.imagemProduto{
+    max-width:27rem;
+    margin: auto;
+}
+
+.formularioComImagem{
+display: flex;    
+}
