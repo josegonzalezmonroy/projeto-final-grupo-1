@@ -24,14 +24,10 @@ export default function App() {
         <Route path="/detalhes/:id" element={<Detalhes />} />
         <Route path="/eles" element={<ProdutosAmbos/>} />
         <Route path="/elas" element={<ProdutosAmbos/>} />
-
         <Route path="/paineldecontrole" element={<ListarProdutosPainel />} />
-        <Route
-          path="/paineldecontrole/cadastrarproduto"
-          element={<CadastrarProduto />}
-        />
+        <Route path="/paineldecontrole/cadastrarproduto" element={<CadastrarProduto />}/>
         <Route path="/:id" element={<EditarProduto />} />
-        <Route path="/pagamento" element={<Pagamento />} />
+        <Route path="/pagamento" element={<Pagamento />} /> 
       </Routes>
 
       <Footer />

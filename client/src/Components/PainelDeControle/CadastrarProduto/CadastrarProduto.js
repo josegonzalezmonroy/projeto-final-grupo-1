@@ -72,9 +72,11 @@ export default function CadastrarProduto() {
                             console.log(imagem)
                         }} />
                 </Form.Group>
+                <div className="bot_Cad">
                 <Link to='/paineldecontrole'>
                     <Button variant="dark" size="sm" type="submit" onClick={reqPost}>Cadastrar</Button>
                 </Link>
+                </div>
             </Form>
         </div>
     )

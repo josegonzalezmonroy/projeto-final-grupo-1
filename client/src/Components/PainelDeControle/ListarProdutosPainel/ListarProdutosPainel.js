@@ -35,7 +35,7 @@ export default function ListarProdutosPainel() {
                 {produtos.map((produto) => {
                     return (
                         <div className="card-item" key={produto._id}>
-                            <Card style={{ width: '12.75rem' }}>
+                            <Card className="Card">
                                 <Card.Img variant="top" src={host + produto.patch}
                                 />
                                 <Card.Body>

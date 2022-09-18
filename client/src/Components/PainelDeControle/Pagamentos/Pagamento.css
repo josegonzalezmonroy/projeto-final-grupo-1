@@ -23,6 +23,9 @@ h1 {
 .Button{
     margin-top: 6px;
     padding:5px;
+}
 
+#form{
+    background-color: rgb(141, 141, 141);
     
 }

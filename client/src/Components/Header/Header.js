@@ -19,12 +19,10 @@ const Header = () => {
         <li>
           <Link to="/elas">
             <p>Elas</p>
-            {/*<Button variant="dark" size="sm" type='select'>Categoria</Button>*/}
           </Link>
         </li>
         <Link to="/eles">
             <p>Eles</p>
-            {/*<Button variant="dark" size="sm" type='select'>Categoria</Button>*/}
           </Link>
         <li>
           <div id="CartShopping" value="produtosCart">

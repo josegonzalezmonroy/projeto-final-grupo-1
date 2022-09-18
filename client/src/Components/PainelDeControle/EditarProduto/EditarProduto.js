@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
+import "./EdiratProduto.css"
 export default function EditarProduto() {
 
     const [nome, setNome] = useState()
@@ -36,6 +36,7 @@ export default function EditarProduto() {
             <h2 className="font-weight-bold text-center">Editar Produto</h2>
             {produtos.map((produto) => {
                 return (
+                    <div className="formulario">
                     <Form key={produto._id}>
                         <Form.Group className="mb-3"
                             id="name">
@@ -65,10 +66,13 @@ export default function EditarProduto() {
                                 defaultValue={produto.categoria} onChange={e => setCategoria(e.target.value)} />
                             <Form.Text className="text-muted"></Form.Text>
                         </Form.Group>
+                        <div className="bot_Cad">
                         <Link to='/paineldecontrole'>
                             <Button variant="dark" size="sm" type="submit" onClick={editar}>Editar</Button>
                         </Link>
+                        </div>
                     </Form>
+                    </div>
                 )
             })}
         </div>

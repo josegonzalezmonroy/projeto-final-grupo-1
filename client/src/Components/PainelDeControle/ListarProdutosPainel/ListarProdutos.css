@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .cards {
     display: flex;
     flex-wrap: wrap;
@@ -6,6 +12,7 @@
 
 .card-item {
     margin: 0.75em;
+    width: 12.75rem;
 }
 
 .cadastro{
