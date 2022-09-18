@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.cards {
+.cards, .confirmar{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -17,4 +17,8 @@
 
 .cadastro{
     margin: 0.2em;
+}
+
+.painel{
+    min-height: 27rem;
 }
