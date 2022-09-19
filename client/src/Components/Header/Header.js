@@ -1,11 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import './Header.css';
-import logo from '../Images/Logo_Camisa_Blanco_m.png'
+import logo from '../Images/Logo_Camisa_Blanco.png'
 
 const Header = () => {
   return (
@@ -13,23 +9,9 @@ const Header = () => {
       <Link className="logo" to="/">
         <img src={logo} alt="Camisas" /> {/*Licença da imagem "alt"*/}
       </Link>
-
-      <ul className='list'>
-        <li>
-          <Link to="/elas">
-            <p>Elas</p>
-          </Link>
-        </li>
-        <Link to="/eles">
-          <p>Eles</p>
-        </Link>
-        <li>
-          <div id="CartShopping" value="produtosCart">
-            <Button variant="dark" size="sm">
-              <FontAwesomeIcon icon={faShoppingCart} /></Button>
-          </div>
-        </li>
-      </ul>
+      <Link clasName="categoria" to="/categoria">
+        categoria
+      </Link>
     </nav >
   )
 }

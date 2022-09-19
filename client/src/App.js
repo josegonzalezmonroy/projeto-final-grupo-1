@@ -8,8 +8,9 @@ import ListarProdutosPainel from "./Components/PainelDeControle/ListarProdutosPa
 import EditarProduto from "./Components/PainelDeControle/EditarProduto/EditarProduto";
 import Pagamento from "./Components/PainelDeControle/Pagamentos/Pagamento";
 import Detalhes from "./Components/Produtos/Detalhes/Detalhes";
-import ProdutosAmbos from "./Components/Produtos/ProdutosAmbos/ProdutosAmbos"
+import ProdutosAmbos from "./Components/Produtos/ProdutosAmbos/ProdutosAmbos";
 import ProdutosGeral from "./Components/Produtos/ProdutosGeral/ProdutosGeral";
+import Categoria from "./Components/Produtos/Categoria/Categoria";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/detalhes/:id" element={<Detalhes />} />
         <Route path="/eles" element={<ProdutosAmbos />} />
         <Route path="/elas" element={<ProdutosAmbos />} />
+        <Route path="/categoria" element={<Categoria />} />
         <Route path="/paineldecontrole" element={<ListarProdutosPainel />} />
         <Route path="/paineldecontrole/cadastrarproduto" element={<CadastrarProduto />} />
         <Route path="/:id" element={<EditarProduto />} />
