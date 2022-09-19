@@ -7,14 +7,17 @@ import './Categoria.css';
 
 const Categoria = () => {
     return (
+        
         <div className="cat">
             <Link to="/elas">
                 <img src={ela} alt="ela" />
             </Link>
-            <Link to="/eles">
+          
+            <Link to="/eles" className='cat_ele'>
                 <img src={ele} alt="ele" />
             </Link>
         </div>
+        
     )
 }
 

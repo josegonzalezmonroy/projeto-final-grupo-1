@@ -21,3 +21,13 @@
 .formularioComImagem{
 display: flex;    
 }
+
+.label{
+    margin-left: 1em;
+    margin-block-end: -1em;
+     
+ }
+
+ h6{
+    margin-left: 1em;
+ }

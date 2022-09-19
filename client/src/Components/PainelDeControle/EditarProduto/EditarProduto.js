@@ -64,11 +64,11 @@ export default function EditarProduto() {
                         <div>
                             {inputImg ?
                                 <div>
-                                    <h6>Clique na imagem para alterá-la</h6>,
+                                    <h6><strong>Clique na imagem para alterá-la!</strong></h6>,
                                     <img onClick={() => setInputImg(!inputImg)} className="imagemProduto" alt="imagem do produto" src={host + produto.patch} />
                                 </div>
                                 : <Form.Group controlId="formFile" className="mb-3">
-                                    <Form.Label>Inserir uma imagem</Form.Label>
+                                    <Form.Label className="label">Inserir uma imagem</Form.Label>
                                     <Form.Control type="file" name="image"
                                         onChange={e => {
                                             setImagem(e.target.files[0])
@@ -81,29 +81,29 @@ export default function EditarProduto() {
                             <Form >
                                 <Form.Group className="mb-3"
                                     id="name">
-                                    <Form.Label>Nome</Form.Label>
-                                    <Form.Control type="text" placeholder="Digite o nome do produto..."
+                                    <Form.Label className="label">Nome</Form.Label>
+                                    <Form.Control className="input"  type="text" placeholder="Digite o nome do produto..."
                                         defaultValue={produto.nome} onChange={e => setNome(e.target.value)} />
                                     <Form.Text className="text-muted"></Form.Text>
                                 </Form.Group>
  
                                 <Form.Group className="mb-3" id="price">
-                                    <Form.Label>Preço</Form.Label>
-                                    <Form.Control type="number" placeholder="Digite o preço..."
+                                    <Form.Label className="label">Preço</Form.Label>
+                                    <Form.Control className="input"  type="number" placeholder="Digite o preço..."
                                         defaultValue={produto.preco} onChange={e => setPreco(e.target.value)} />
                                     <Form.Text className="text-muted"></Form.Text>
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" id="description">
-                                    <Form.Label>Descrição</Form.Label>
-                                    <Form.Control type="text" placeholder="Descreva o produto..."
+                                    <Form.Label className="label">Descrição</Form.Label>
+                                    <Form.Control className="input" type="text" placeholder="Descreva o produto..."
                                         defaultValue={produto.descricao} onChange={e => setDescricao(e.target.value)} />
                                     <Form.Text className="text-muted"></Form.Text>
                                 </Form.Group>
 
                                 <Form.Group className="mb-3">
-                                    <Form.Label>Categoria</Form.Label>
-                                    <Form.Select
+                                    <Form.Label className="label">Categoria</Form.Label>
+                                    <Form.Select className="inputC"
                                         defaultValue={produto.categoria}
                                         name="categoria"
                                         onChange={e => setCategoria(e.target.value)}

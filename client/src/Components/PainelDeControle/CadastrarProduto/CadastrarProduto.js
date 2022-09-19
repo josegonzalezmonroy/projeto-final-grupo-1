@@ -30,31 +30,33 @@ export default function CadastrarProduto() {
         <div>
             <h2 className="font-weight-bold text-center">Cadastrar Produto</h2>
             <Form className="formulario" id="formularioCadastro">
+                
                 <Form.Group className="mb-3"
                     id="name">
-                    <Form.Label>Nome</Form.Label>
-                    <Form.Control type="text" name="nome" placeholder="Digite o nome do produto..."
+                    <Form.Label className="label">Nome</Form.Label>
+                    <Form.Control className="input" type="text" name="nome" placeholder="Digite o nome do produto..."
                         defaultValue={nome} onChange={e => setNome(e.target.value)} />
                     <Form.Text className="text-muted"></Form.Text>
                 </Form.Group>
+               
 
                 <Form.Group className="mb-3" name="preco">
-                    <Form.Label>Preço</Form.Label>
-                    <Form.Control type="number" name="preco" placeholder="Digite o preço..."
+                    <Form.Label className="label">Preço</Form.Label>
+                    <Form.Control className="input"  type="number" name="preco" placeholder="Digite o preço..."
                         onChange={e => setPreco(e.target.value)} />
                     <Form.Text className="text-muted"></Form.Text>
                 </Form.Group>
 
                 <Form.Group className="mb-3">
-                    <Form.Label>Descrição</Form.Label>
-                    <Form.Control type="text" name="descricao" placeholder="Descreva o produto..."
+                    <Form.Label className="label">Descrição</Form.Label>
+                    <Form.Control className="input"  type="text" name="descricao" placeholder="Descreva o produto..."
                         onChange={e => setDescricao(e.target.value)} />
                     <Form.Text className="text-muted"></Form.Text>
                 </Form.Group>
 
                 <Form.Group className="mb-3">
-                    <Form.Label>Categoria</Form.Label>
-                    <Form.Select
+                    <Form.Label className="label">Categoria</Form.Label>
+                    <Form.Select  className="inputC"
                         value={categoria}
                         name="categoria"
                         onChange={e => setCategoria(e.target.value)}
@@ -64,8 +66,8 @@ export default function CadastrarProduto() {
                         <option value="eles">Eles</option>
                     </Form.Select>
                 </Form.Group>
-                <Form.Group controlId="formFile" className="mb-3">
-                    <Form.Label>Inserir uma imagem</Form.Label>
+                <Form.Group  controlId="formFile" className="mb-3">
+                    <Form.Label className="label">Inserir uma imagem</Form.Label>
                     <Form.Control type="file" name="image"
                         onChange={e => {
                             setImagem(e.target.files[0])
@@ -77,6 +79,7 @@ export default function CadastrarProduto() {
                         <Button variant="dark" size="sm" type="submit" onClick={reqPost}>Cadastrar</Button>
                     </Link>
                 </div>
+               
             </Form>
         </div>
     )

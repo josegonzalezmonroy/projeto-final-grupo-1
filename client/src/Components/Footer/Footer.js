@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTruckFast, faCreditCard, faSun } from "@fortawesome/free-solid-svg-icons";
 import './Footer.css';
 import logoFooter from '../Images/Logo_Camisa_Blanco_p.png'

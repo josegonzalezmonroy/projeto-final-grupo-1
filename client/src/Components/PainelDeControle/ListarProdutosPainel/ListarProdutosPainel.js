@@ -65,7 +65,9 @@ export default function ListarProdutosPainel() {
                     }
                     )) :
                     <div className="confirmar">
-                        <h1>Tem certeza que deseja excluir este produto?</h1>
+                        <div className="conf">
+                        <p><strong>Tem certeza que deseja excluir este produto?</strong></p>
+                        </div>
                         <Card className="Card">
                             <Card.Img variant="top" src={imagem} />
                             <Card.Body>
