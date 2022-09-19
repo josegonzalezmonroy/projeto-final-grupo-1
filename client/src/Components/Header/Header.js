@@ -6,10 +6,10 @@ import logo from '../Images/Logo_Camisa_Blanco.png'
 const Header = () => {
   return (
     <nav className="menu">
-      <Link className="logo" to="/">
+      <Link to="/">
         <img src={logo} alt="Camisas" /> {/*Licença da imagem "alt"*/}
       </Link>
-      <Link clasName="categoria" to="/categoria">
+      <Link to="/categoria">
         categoria
       </Link>
     </nav >
