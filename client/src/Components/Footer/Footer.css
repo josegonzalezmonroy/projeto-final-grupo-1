@@ -1,7 +1,7 @@
 .footer {
     background-color: black;
     color: white;
-    padding: 0.5em 4em;
+    padding: 0.05em 0em;
     text-align: center;
 }
 
@@ -9,10 +9,11 @@
     display: flex;
     justify-content: center;
     list-style-type: none;
+    margin: 0em
 }
 
 .promo li {
-    margin: 0 1em;
+    margin: 1em 1em;
 }
 
 .promo svg {
@@ -24,11 +25,16 @@
     color: #5F0000;
 }
 
-p {
-    padding: 0, 9em;
+#icon :hover {
+    color: #ffffff;
 }
 
-#icon-faSun:hover{
-    background-color:#5F0000;
-    margin-left: 4em;
+a :hover {
+    color: #5F0000;
+}
+
+.copy {
+    margin-top: 0.5em;
+    font-size: 0.7em;
+    letter-spacing: 0.1em;
 }

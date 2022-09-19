@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
 import Footer from "./Components/Footer/Footer";
@@ -28,8 +29,7 @@ export default function App() {
         <Route path="/:id" element={<EditarProduto />} />
         <Route path="/pagamento" element={<Pagamento />} />
       </Routes>
-
       <Footer />
-    </BrowserRouter>
+          </BrowserRouter>
   );
 }

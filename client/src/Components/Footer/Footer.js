@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button } from "react-bootstrap";
-import { faTruckFast, faCreditCard, faSun } from "@fortawesome/free-solid-svg-icons";
-import './Footer.css';
+import { faTruckFast, faCreditCard, faGear } from "@fortawesome/free-solid-svg-icons";
 import logoFooter from '../Images/Logo_Camisa_Blanco_p.png'
+import './Footer.css';
 
 const Footer = () => {
     return (
@@ -23,20 +22,18 @@ const Footer = () => {
                 <li>
                     <span>6X sem juros no cartão</span>
                 </li>
-
-                <li id="icon-faSun">
+                <li>
                     <Link to="/paineldecontrole">
-                        <Button variant="" size="sm">
-                            <FontAwesomeIcon icon={faSun} /></Button>
+                        <FontAwesomeIcon icon={faGear} />
                     </Link>
                 </li>
             </ul>
 
-            <Link className="logo" to="/">
+            <Link to="/">
                 <img src={logoFooter} alt="Camisas" />
             </Link>
             <br></br>
-            <p>
+            <p className='copy'>
                 &copy; 2022
             </p>
 
