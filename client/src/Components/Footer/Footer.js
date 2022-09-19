@@ -6,6 +6,7 @@ import { faTruckFast, faCreditCard, faSun } from "@fortawesome/free-solid-svg-ic
 import './Footer.css';
 import logoFooter from '../Images/Logo_Camisa_Blanco_p.png'
 
+
 const Footer = () => {
     return (
         <footer className='footer'>
@@ -23,20 +24,18 @@ const Footer = () => {
                 <li>
                     <span>6X sem juros no cartão</span>
                 </li>
-
-                <li id="icon-faSun">
+                <li>
                     <Link to="/paineldecontrole">
-                        <Button variant="" size="sm">
-                            <FontAwesomeIcon icon={faSun} /></Button>
+                        <FontAwesomeIcon icon={faGear} />
                     </Link>
                 </li>
             </ul>
 
-            <Link className="logo" to="/">
+            <Link to="/">
                 <img src={logoFooter} alt="Camisas" />
             </Link>
             <br></br>
-            <p>
+            <p className='copy'>
                 &copy; 2022
             </p>
 
