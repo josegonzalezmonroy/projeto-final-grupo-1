@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Components/Header/Header";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./Components/Home/Home";
 import Footer from "./Components/Footer/Footer";
 import CadastrarProduto from "./Components/PainelDeControle/CadastrarProduto/CadastrarProduto";

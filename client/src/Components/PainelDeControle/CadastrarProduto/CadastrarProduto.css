@@ -4,11 +4,26 @@
     box-sizing: border-box;
 }
 
-.formulario {
-    width: 50%;
-    margin: auto;
-}
 
 .bot_Cad{
     margin: 1em;
+}
+
+.label{
+   margin-left: 1em;
+   margin-block-end: -1em;
+    
+}
+
+.input{
+    width: 41.3em;
+}
+
+.inputC{
+    margin-left: 1em;
+    width: 41.3em;
+}
+
+#formFile{
+    width: 41.3em;
 }

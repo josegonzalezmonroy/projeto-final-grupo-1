@@ -1,60 +1,74 @@
 
 import React from "react";
 import './Pagamento.css'
-import Form from 'react-bootstrap/Form';
-//import { useSForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Button } from "react-bootstrap";
 
 
 
 export default function Pagamento() {
+  //hendle events
+  const { register, handleSubmit} = useForm();  // formState : { errors } usar com erros
+  //handle submit
+  const onSubmit = data => alert(JSON.stringify(data));
 
   return (
     <>
       <h1>Escolha a sua forma de pagamento!</h1>
       <div className="form_pagamento">
         <div className="pagam">
-          <Form.Check
-            type="checkbox"
-            id="form"
-            label= "Boleto"
-            />
-          <Form.Check
-            type="checkbox"
-            label="Pix"
-            id="form"
-          />
+<React.Fragment>
+  <section>
+   <form onSubmit={handleSubmit(onSubmit)}>
+      <div>
+        <label><strong>Boleto</strong></label>
+        <input type='radio'
+        value='boleto'
+        {...register("pagamType", { required: 'Tipo de pagamento válido'})} 
+        />
+        
+        </div>
+      <div>
+      <label><strong>Pix</strong></label>
+        <input type='radio'
+        value='pix'
+        {...register("pagamType", { required: 'Tipo de pagamento válido'})}
+        />
+      </div>
+      <div>
+      <label><strong>Crédito</strong></label>
+        <input type='radio'
+        value='credito'
+        {...register("pagamType", { required: 'Tipo de pagamento válido'})}
+        />
 
-          <Form.Check
-            type="checkbox"
-            label="Cartão de crédito"
-            id="form"
-          />
-          <Form.Check
-            type="checkbox"
-            label="Débido"
-            id="form"
-          />
+      </div>
+      <div>
+      <label><strong>Débito</strong></label>
+        <input type='radio'
+        value='debito'
+         {...register("pagamType", { required: 'Tipo de pagamento válido'})}
+        />
+        
+      </div>
+    </form>
+  </section>
+</React.Fragment>
+
+{/* Só quando o botão for um link
+<div>
+{errors.pagamType && <span>{errors.pagamType.message}</span>}
+  </div>*/}
 
 
   <div className="Button">
-          <Button type="submit" variant="dark" value="submit">Pague</Button>
+          <Button type="submit" variant="dark" value="submit">Pague aqui</Button>
+          
 </div>
         </div>
-
-       {/*} <div class="form-check">
-    <Form.Control type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked" required>
-    <label class="form-check-label" for="validationFormCheck2">Toggle this radio</label>
-  </Form.Control>
-  </div>
-  <div class="form-check mb-3">
-    <Form.Control type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked" required>
-    <label class="form-check-label" for="validationFormCheck3">Or toggle this other radio</label></Form.Control>
-    <div class="invalid-feedback">More example invalid feedback text</div>
-  </div>*/}
-      </div>
+  </div> 
 
 
     </>
   )
-}
+} 
