@@ -1,7 +1,6 @@
 
 import React from "react";
 import './Pagamento.css'
-//import Form from 'react-bootstrap/Form';
 import { useForm } from "react-hook-form";
 import { Button } from "react-bootstrap";
 
@@ -9,7 +8,7 @@ import { Button } from "react-bootstrap";
 
 export default function Pagamento() {
   //hendle events
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit} = useForm();  // formState : { errors } usar com erros
   //handle submit
   const onSubmit = data => alert(JSON.stringify(data));
 
