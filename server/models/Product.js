@@ -6,6 +6,8 @@ const productSchema = new mongoose.Schema({
     descricao: String,
     preco: Number,
     categoria: String,
+    cor: String,
+    tamanho: String,
     imagem: String,
     patch: String,
     noCarrinho: {type: Boolean, default: false}  

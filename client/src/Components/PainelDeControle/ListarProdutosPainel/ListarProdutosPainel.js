@@ -36,11 +36,11 @@ export default function ListarProdutosPainel() {
                     </Button>
                 </div>
             </Link>
-            <div className="cards">
+            <div className="cards cardsItem">
                 {!confirmar ?
                     (produtos.map((produto) => {
                         return (
-                            <div className="card-item" key={produto._id}>
+                            <div className="card-item cardItem" key={produto._id}>
                                 <Card className="Card">
                                     <Card.Img variant="top" src={host + produto.patch}
                                     />
@@ -48,16 +48,18 @@ export default function ListarProdutosPainel() {
                                         <Card.Title>{produto.nome}</Card.Title>
                                         <Card.Subtitle className="mb-2 text-muted">R$ {produto.preco}</Card.Subtitle>
                                         <Card.Text>{produto.descricao}</Card.Text>
-                                        <Link to={`/${produto._id}`}>
-                                            <Button variant="dark" size="sm">Editar</Button>
-                                        </Link>
-                                        <Button variant="secondary" size="sm" onClick={() => {
-                                            setConfirmar(true)
-                                            setIdProduto(produto._id)
-                                            setNome(produto.nome)
-                                            setImagem(host + produto.patch)
-                                            setPreco(produto.preco)
-                                        }}>Excluir</Button>
+                                        <div className="alignButton">
+                                            <Link to={`/${produto._id}`}>
+                                                <Button className="spaceButton" variant="dark" size="sm">Editar</Button>
+                                            </Link>
+                                            <Button className="spaceButton" variant="secondary" size="sm" onClick={() => {
+                                                setConfirmar(true)
+                                                setIdProduto(produto._id)
+                                                setNome(produto.nome)
+                                                setImagem(host + produto.patch)
+                                                setPreco(produto.preco)
+                                            }}>Excluir</Button>
+                                        </div>
                                     </Card.Body>
                                 </Card>
                             </div>

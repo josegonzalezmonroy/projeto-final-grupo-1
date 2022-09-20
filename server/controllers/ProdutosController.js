@@ -21,7 +21,7 @@ async function mostrarProdutosPorCategoria(req, res) {
 
 async function cadrastrarProduto(req, res) {
     try {
-    const { nome, descricao, preco, categoria } = req.body
+    const { nome, descricao, preco, categoria, cor, tamanho } = req.body
     const imagem = req.file.filename
     const patch = `/images/${imagem}`
 
@@ -30,11 +30,13 @@ async function cadrastrarProduto(req, res) {
             descricao,
             preco,
             categoria,
+            cor, 
+            tamanho,
             imagem,
             patch
         })
 
-        nome && descricao && preco && categoria && imagem && patch ?
+        nome && descricao && preco && categoria && cor && tamanho && imagem && patch ?
             (await product.save()
                 .then(console.log(product, 'Produto')),
                 res.status(201)
@@ -65,7 +67,7 @@ async function mostrarProdutosPorId(req, res) {
 async function editarProduto(req, res) {
     try {
     const { id } = req.params
-    const { nome, descricao, preco, categoria } = req.body
+    const { nome, descricao, preco, categoria, cor, tamanho } = req.body
     const imagem = req.file.filename
     const patch = `/images/${imagem}`
 
@@ -77,6 +79,8 @@ async function editarProduto(req, res) {
                 descricao,
                 preco,
                 categoria,
+                cor,
+                tamanho,
                 imagem,
                 patch
             }), res.status(202).json(produto)) :
@@ -89,7 +93,7 @@ async function editarProduto(req, res) {
 
 async function editarProdutoSem(req, res) {
     const { id } = req.params
-    const { nome, descricao, preco, categoria } = req.body
+    const { nome, descricao, preco, categoria, cor, tamanho } = req.body
 
     try {
         const produto = await Product.findById(id)
@@ -98,7 +102,9 @@ async function editarProdutoSem(req, res) {
                 nome,
                 descricao,
                 preco,
-                categoria
+                categoria,
+                cor, 
+                tamanho,
             }), res.status(202).json(produto)) :
             res.status(404).json({ mensagem: 'Campos requeridos' })
     } catch (e) {

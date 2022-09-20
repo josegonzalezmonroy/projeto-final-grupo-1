@@ -48,7 +48,9 @@ export default function Detalhes() {
           return (
             
             <div key={produto._id} className="central">
+              
               <div className="card-item">
+                
                 <div className="img-card">
                   <Card.Img className="card-image" variant="top" src={host + produto.patch} />
                 </div>
@@ -69,35 +71,38 @@ export default function Detalhes() {
                       </Box>
                     </div>
                                       
-                    
-                    <div  className="card-nome">
-                      <Card.Title>
-                        {produto.nome}
-                      </Card.Title>
-                    </div>
-                    
-                    <div className="card-preco">
-                      <Card.Subtitle >
-                        R$ {produto.preco}
-                      </Card.Subtitle>
-                    </div>
-                    <div className="card-texto">
-                      <Card.Text>
-                        {produto.descricao}
-                      </Card.Text>
-                    </div>
-                    <div className="card-cor">
-                      {produto.cor}
-                    </div>
-                    <div className="card-tamanho">
-                      {produto.tamanho}
-                    </div>
-                    <p className="frete">
-                      <strong>
-                        <i>Frete grátis</i>
-                      </strong>
-                    </p>
-
+                    <div className="center">
+                      <div className="card-nome">
+                        <Card.Title>
+                          Nome: {produto.nome}
+                        </Card.Title>
+                      </div>
+                      
+                      <div className="card-preco">
+                        <Card.Subtitle >
+                          Preço: R$ {produto.preco}
+                        </Card.Subtitle>
+                      </div>
+                      
+                      <div className="card-texto">
+                        <Card.Text>
+                          Descrição: {produto.descricao}
+                        </Card.Text>
+                      </div>
+                      
+                      <div className="card-cor">
+                        Cor: {produto.cor}
+                      </div>
+                      
+                      <div className="card-tamanho">
+                        Tamanho: {produto.tamanho}
+                      </div>
+                      <p className="frete">
+                        <strong>
+                          <i>Frete grátis</i>
+                        </strong>
+                      </p>
+                    </div>      
                     {/*Botões de adicionar ou remover Carinho de compras*/}
                     <div
                       style={{

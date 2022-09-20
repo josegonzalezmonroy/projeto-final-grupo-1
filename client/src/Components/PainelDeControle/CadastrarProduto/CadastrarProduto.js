@@ -9,6 +9,8 @@ export default function CadastrarProduto() {
     const [preco, setPreco] = useState()
     const [descricao, setDescricao] = useState()
     const [categoria, setCategoria] = useState()
+    const [cor, setCor] = useState()
+    const [tamanho, setTamanho] = useState()
     const [imagem, setImagem] = useState()
 
     const reqPost = async () => {
@@ -18,6 +20,8 @@ export default function CadastrarProduto() {
         form.append('preco', preco)
         form.append('descricao', descricao)
         form.append('categoria', categoria)
+        form.append('cor', cor)
+        form.append('tamanho', tamanho)
         form.append('image', imagem)
 
         await fetch('http://localhost:3001/create/', {
@@ -42,7 +46,7 @@ export default function CadastrarProduto() {
 
                 <Form.Group className="mb-3" name="preco">
                     <Form.Label className="label">Preço</Form.Label>
-                    <Form.Control className="input"  type="number" name="preco" placeholder="Digite o preço..."
+                    <Form.Control className="input"  type="number" name="preco" placeholder="Digite o preço do produto..."
                         onChange={e => setPreco(e.target.value)} />
                     <Form.Text className="text-muted"></Form.Text>
                 </Form.Group>
@@ -51,6 +55,20 @@ export default function CadastrarProduto() {
                     <Form.Label className="label">Descrição</Form.Label>
                     <Form.Control className="input"  type="text" name="descricao" placeholder="Descreva o produto..."
                         onChange={e => setDescricao(e.target.value)} />
+                    <Form.Text className="text-muted"></Form.Text>
+                </Form.Group>
+
+                <Form.Group className="mb-3">
+                    <Form.Label className="label">Cor</Form.Label>
+                    <Form.Control className="input"  type="text" name="cor" placeholder="Digite a cor do produto..."
+                        onChange={e => setCor(e.target.value)} />
+                    <Form.Text className="text-muted"></Form.Text>
+                </Form.Group>
+
+                <Form.Group className="mb-3">
+                    <Form.Label className="label">Tamanho</Form.Label>
+                    <Form.Control className="input"  type="text" name="tamanho" placeholder="Digite o tamanho do produto..."
+                        onChange={e => setTamanho(e.target.value)} />
                     <Form.Text className="text-muted"></Form.Text>
                 </Form.Group>
 

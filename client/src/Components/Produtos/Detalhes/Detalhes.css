@@ -80,3 +80,7 @@
   .cards{
     justify-content: flex-start;
   }
+
+  .center {
+    float: right;
+  }

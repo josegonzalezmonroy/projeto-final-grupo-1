@@ -10,6 +10,8 @@ export default function EditarProduto() {
     const [preco, setPreco] = useState()
     const [descricao, setDescricao] = useState()
     const [categoria, setCategoria] = useState()
+    const [cor, setCor] = useState()
+    const [tamanho, setTamanho] = useState()
     const [imagem, setImagem] = useState()
     const [inputImg, setInputImg] = useState(true)
 
@@ -34,6 +36,8 @@ export default function EditarProduto() {
         form.append('preco', preco)
         form.append('descricao', descricao)
         form.append('categoria', categoria)
+        form.append('cor', cor)
+        form.append('tamanho', tamanho)
         form.append('image', imagem)
 
         await fetch(`http://localhost:3001/${id}`, {
@@ -44,7 +48,7 @@ export default function EditarProduto() {
 
     const editarSem = async () => {
         const produtoModificado = {
-            nome, preco, descricao, categoria
+            nome, preco, descricao, categoria, cor, tamanho
         }
 
         await fetch(`http://localhost:3001/editarsem/${id}`, {
@@ -89,7 +93,7 @@ export default function EditarProduto() {
  
                                 <Form.Group className="mb-3" id="price">
                                     <Form.Label className="label">Preço</Form.Label>
-                                    <Form.Control className="input"  type="number" placeholder="Digite o preço..."
+                                    <Form.Control className="input"  type="number" placeholder="Digite o preço do produto..."
                                         defaultValue={produto.preco} onChange={e => setPreco(e.target.value)} />
                                     <Form.Text className="text-muted"></Form.Text>
                                 </Form.Group>
@@ -101,6 +105,20 @@ export default function EditarProduto() {
                                     <Form.Text className="text-muted"></Form.Text>
                                 </Form.Group>
 
+                                <Form.Group className="mb-3" id="color">
+                                    <Form.Label className="label">Cor</Form.Label>
+                                    <Form.Control className="input" type="text" placeholder="Digite a cor do produto..."
+                                        defaultValue={produto.cor} onChange={e => setCor(e.target.value)} />
+                                    <Form.Text className="text-muted"></Form.Text>
+                                </Form.Group>
+                                
+                                <Form.Group className="mb-3" id="size">
+                                    <Form.Label className="label">Tamanho</Form.Label>
+                                    <Form.Control className="input" type="text" placeholder="Digite o tamanho do produto..."
+                                        defaultValue={produto.tamanho} onChange={e => setTamanho(e.target.value)} />
+                                    <Form.Text className="text-muted"></Form.Text>
+                                </Form.Group>
+                                
                                 <Form.Group className="mb-3">
                                     <Form.Label className="label">Categoria</Form.Label>
                                     <Form.Select className="inputC"
