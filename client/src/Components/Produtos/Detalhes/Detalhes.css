@@ -1,3 +1,18 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+h2{
+  color: rgb(43, 43, 43);
+  
+}
+.subt{
+  margin-top: -1em;
+}
+
 .card-cor {
     text-align: center;
   }
@@ -37,9 +52,7 @@
   
   }
   
-  .botao-mais {
-    padding-left: 4px;
-  }
+  
   
   .card-body {
     padding: 0 30px !important;
@@ -79,4 +92,11 @@
   
   .cards{
     justify-content: flex-start;
+  }
+
+  .produtcar{
+    color:white;
+    display: flex;
+    margin-left: 76em;
+    margin-top: -5em;
   }
