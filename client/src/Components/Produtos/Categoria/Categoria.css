@@ -1,12 +1,27 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.cat_ele{
-    margin-left: 9.2em;
+.container__box {
+    max-width: 66em;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
 }
 
+.box {
+    max-width: 25em;
+    height: 50em;
+    margin: 0.1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
 
-
+.box:hover {
+    transform: scale(1.05);
+}
