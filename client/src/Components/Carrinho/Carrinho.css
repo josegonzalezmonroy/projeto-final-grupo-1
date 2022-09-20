@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.produtcar{
+    color:white;
+    display: flex;
+    margin-left: 76em;
+    margin-top: -5em;
+
+}
+
+.botao-remov{
+    display: flex;
+    margin-top: 25em;
+    align-items: center;
+    justify-content: center;
+    margin-block-end: 1em;
+}

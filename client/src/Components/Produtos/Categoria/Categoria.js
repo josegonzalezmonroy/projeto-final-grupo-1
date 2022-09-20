@@ -8,12 +8,12 @@ import './Categoria.css';
 const Categoria = () => {
     return (
         
-        <div className="cat">
-            <Link to="/elas">
+        <div className="container__box">
+            <Link className='box' to="/elas">
                 <img src={ela} alt="ela" />
             </Link>
           
-            <Link to="/eles" className='cat_ele'>
+            <Link className='box' to="/eles">
                 <img src={ele} alt="ele" />
             </Link>
         </div>

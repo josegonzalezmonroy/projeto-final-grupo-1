@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import logo from '../Images/Logo_Camisa_Blanco.png'
+import logo from '../Images/Logo_Camisa_Blanco.png';
 import './Header.css';
 
 const Header = () => {
@@ -9,7 +9,7 @@ const Header = () => {
       <Link to="/">
         <img src={logo} alt="Camisas" /> {/*Licença da imagem "alt"*/}
       </Link>
-      <Link to="/categoria">
+      <Link className='categoria' to="/categoria">
         categoria
       </Link>
     </nav >

@@ -14,13 +14,13 @@
   align-items: center;
 }
 
-a {
+.categoria {
   color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
-a:hover {
+.categoria:hover {
   color: #7e0202
 }

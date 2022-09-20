@@ -13,6 +13,7 @@ import Detalhes from "./Components/Produtos/Detalhes/Detalhes";
 import ProdutosAmbos from "./Components/Produtos/ProdutosAmbos/ProdutosAmbos";
 import ProdutosGeral from "./Components/Produtos/ProdutosGeral/ProdutosGeral";
 import Categoria from "./Components/Produtos/Categoria/Categoria";
+import Carrinho from "./Components/Carrinho/Carrinho";
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
         <Route path="/paineldecontrole/cadastrarproduto" element={<CadastrarProduto />} />
         <Route path="/:id" element={<EditarProduto />} />
         <Route path="/pagamento" element={<Pagamento />} />
+        <Route path="/carrinho" element={<Carrinho />} />
       </Routes>
       <Footer />
           </BrowserRouter>
