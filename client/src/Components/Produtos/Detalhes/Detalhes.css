@@ -1,5 +1,102 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: "Roboto Slab", sans-serif;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+
+h2{
+  color: rgb(43, 43, 43);
+  
+}
+.subt{
+  margin-top: -1em;
+}
+
+.card-cor {
+    text-align: center;
+  }
+  
+  .card-tamanho {
+    text-align: center;
+  }
+  
+  .card-nome {
+    text-align: center;
+    padding-top: 1px;  
+  }
+  
+  .card-preco {
+    padding-top: 10px;
+    text-align: center;  
+      
+  }
+  
+  .align-title{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .card-texto {
+    text-align: center;  
+    padding-top: 10px;  
+  }
+  
+  .frete {
+    text-align: center;  
+  }
+  
+  .Pagamento {
+    
+    padding-left: 70px;
+  
+  }
+  
+  
+  
+  .card-body {
+    padding: 0 30px !important;
+    width: 200px;
+    float: right;
+    
+  }
+  
+  .estrelas{
+    text-align: center;
+  }
+  
+  .card-item {
+    width: 650px;
+    float: left;
+    display: flex;
+    flex-direction: row !important;
+  }
+  
+  .img-card{
+    max-width: 600px;
+    
+  }
+  
+  .central{
+    margin: 0 auto;
+  }
+  
+  .card-image {
+    width: 600px;
+    margin-right: 200px;
+  }
+  
+  .vazio{
+    margin: 40px 0;
+  }
+  
+  .cards{
+    justify-content: flex-start;
+  }
+
+  .produtcar{
+    color:white;
+    display: flex;
+    margin-left: 76em;
+    margin-top: -5em;
+  }

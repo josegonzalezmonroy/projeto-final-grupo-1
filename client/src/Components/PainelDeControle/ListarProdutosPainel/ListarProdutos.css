@@ -14,12 +14,14 @@
 .conf{
 color:white ;
 margin-top: 8em;
-margin-right: 1em;
+margin-right: 4em;
+margin-left: 3em;
 background-color: red;
 border-radius: 1em;
 padding: 2em;
 height: 1em;
 }
+
 
 .card-item {
     margin: 0.75em;
