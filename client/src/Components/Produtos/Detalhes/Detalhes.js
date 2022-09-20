@@ -106,7 +106,7 @@ export default function Detalhes() {
                         </Button>
                         <Link to="/Pagamento">
                           <div className="Pagamento">
-                            <Button size="sm" variant="dark">
+                            <Button size="sm" variant="light">
                               Comprar
                             </Button>
                           </div>
