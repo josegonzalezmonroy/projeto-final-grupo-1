@@ -100,7 +100,7 @@ export default function Detalhes() {
                                 setItemCount(itemCount + 1);
                               }}
                             >
-                              Carrinho
+                              Adicionar ao carrinho
                             </Button>
                           </div>
                           <Link to="/Pagamento">

@@ -33,7 +33,7 @@ export default function Carinho() {
         <Link to="/Pagamento">
           <div className="Pagamento">
             <Button size="sm" variant="dark">
-              Comprar agora
+              Compre agora
             </Button>
           </div>
         </Link>
