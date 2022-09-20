@@ -32,13 +32,13 @@ export default function EditarProduto() {
     const editarCom = async () => {
 
         const form = new FormData()
-        form.append('nome', nome)
-        form.append('preco', preco)
-        form.append('descricao', descricao)
-        form.append('categoria', categoria)
-        form.append('cor', cor)
-        form.append('tamanho', tamanho)
-        form.append('image', imagem)
+        imagem && form.append('image', imagem)
+        nome && form.append('nome', nome)
+        preco && form.append('preco', preco)
+        descricao && form.append('descricao', descricao)
+        categoria && form.append('categoria', categoria)
+        cor && form.append('cor', cor)
+        tamanho && form.append('tamanho', tamanho)
 
         await fetch(`http://localhost:3001/${id}`, {
             method: 'PATCH',
