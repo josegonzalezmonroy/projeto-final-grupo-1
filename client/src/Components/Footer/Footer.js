@@ -24,7 +24,7 @@ const Footer = () => {
                     <span>6X sem juros no cartão</span>
                 </li>
                 <li>
-                    <Link to="/paineldecontrole">
+                    <Link className='icone' to="/paineldecontrole">
                         <FontAwesomeIcon icon={faGear} />
                     </Link>
                 </li>

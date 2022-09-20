@@ -10,10 +10,10 @@ const Home = () => {
             <div className="overlay"></div>
             <video src={videoShirt} autoPlay loop muted />
             <div className='content'>
-                <h1>Seja muito <span> Bem-vind@</span></h1>
-                <h2>Comece uma <em>Nova Aventura entre Camisas</em> agora mesmo!</h2>
+                <h1 className='titulo' >Seja muito <span> Bem-vind@</span></h1>
+                <h2 className='aventura'>Comece uma <em>Nova Aventura entre Camisas</em> agora mesmo!</h2>
                 <Link to="/listaprodutos">
-                    <Button variant="light" size="sm" type='select'>Vamos Lá!</Button>
+                    <Button className='vamos' variant="light" size="sm" type='select'>Vamos Lá!</Button>
                 </Link>
             </div>
         </div>

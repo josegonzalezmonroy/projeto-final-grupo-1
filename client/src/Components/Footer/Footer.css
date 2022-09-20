@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: border-box;
+    font-family: "Roboto Slab", sans-serif;
+}
+
 .footer {
     background-color: black;
     color: white;
@@ -29,7 +36,12 @@
     color: #ffffff;
 }
 
-a :hover {
+.icone {
+    color: #ffffff;
+    opacity: .5;
+}
+
+.icone :hover {
     color: #5F0000;
 }
 

@@ -9,7 +9,7 @@ const Header = () => {
       <Link to="/">
         <img src={logo} alt="Camisas" /> {/*Licença da imagem "alt"*/}
       </Link>
-      <Link to="/categoria">
+      <Link className='categoria' to="/categoria">
         categoria
       </Link>
     </nav >

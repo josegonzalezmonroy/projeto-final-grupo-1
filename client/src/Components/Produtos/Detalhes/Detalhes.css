@@ -1,102 +1,96 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
-h2{
-  color: rgb(43, 43, 43);
-  
+h2 {
+    color: rgb(43, 43, 43);
+
 }
-.subt{
-  margin-top: -1em;
+
+.subt {
+    margin-top: -1em;
 }
 
 .card-cor {
     text-align: center;
-  }
-  
-  .card-tamanho {
+}
+
+.card-tamanho {
     text-align: center;
-  }
-  
-  .card-nome {
+}
+
+.card-nome {
     text-align: center;
-    padding-top: 1px;  
-  }
-  
-  .card-preco {
+    padding-top: 1px;
+}
+
+.card-preco {
     padding-top: 10px;
-    text-align: center;  
-      
-  }
-  
-  .align-title{
+    text-align: center;
+}
+
+.align-title {
     display: flex;
     justify-content: center;
-  }
-  
-  .card-texto {
-    text-align: center;  
-    padding-top: 10px;  
-  }
-  
-  .frete {
-    text-align: center;  
-  }
-  
-  .Pagamento {
-    
+}
+
+.card-texto {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.frete {
+    text-align: center;
+}
+
+.Pagamento {
     padding-left: 70px;
-  
-  }
-  
-  
-  
-  .card-body {
+}
+
+.card-body {
     padding: 0 30px !important;
     width: 200px;
     float: right;
-    
-  }
-  
-  .estrelas{
+}
+
+.estrelas {
     text-align: center;
-  }
-  
-  .card-item {
+}
+
+.card-item {
     width: 650px;
     float: left;
     display: flex;
     flex-direction: row !important;
-  }
-  
-  .img-card{
+}
+
+.img-card {
     max-width: 600px;
-    
-  }
-  
-  .central{
+}
+
+.central {
     margin: 0 auto;
-  }
-  
-  .card-image {
+}
+
+.card-image {
     width: 600px;
     margin-right: 200px;
-  }
-  
-  .vazio{
-    margin: 40px 0;
-  }
-  
-  .cards{
-    justify-content: flex-start;
-  }
+}
 
-  .produtcar{
-    color:white;
+.vazio {
+    margin: 40px 0;
+}
+
+.cards {
+    justify-content: flex-start;
+}
+
+.produtcar {
+    color: white;
     display: flex;
     margin-left: 76em;
     margin-top: -5em;
-  }
+}
