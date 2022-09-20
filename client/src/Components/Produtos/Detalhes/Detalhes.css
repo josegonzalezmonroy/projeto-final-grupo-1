@@ -1,0 +1,82 @@
+.card-cor {
+    text-align: center;
+  }
+  
+  .card-tamanho {
+    text-align: center;
+  }
+  
+  .card-nome {
+    text-align: center;
+    padding-top: 1px;  
+  }
+  
+  .card-preco {
+    padding-top: 10px;
+    text-align: center;  
+      
+  }
+  
+  .align-title{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .card-texto {
+    text-align: center;  
+    padding-top: 10px;  
+  }
+  
+  .frete {
+    text-align: center;  
+  }
+  
+  .Pagamento {
+    
+    padding-left: 70px;
+  
+  }
+  
+  .botao-mais {
+    padding-left: 4px;
+  }
+  
+  .card-body {
+    padding: 0 30px !important;
+    width: 200px;
+    float: right;
+    
+  }
+  
+  .estrelas{
+    text-align: center;
+  }
+  
+  .card-item {
+    width: 650px;
+    float: left;
+    display: flex;
+    flex-direction: row !important;
+  }
+  
+  .img-card{
+    max-width: 600px;
+    
+  }
+  
+  .central{
+    margin: 0 auto;
+  }
+  
+  .card-image {
+    width: 600px;
+    margin-right: 200px;
+  }
+  
+  .vazio{
+    margin: 40px 0;
+  }
+  
+  .cards{
+    justify-content: flex-start;
+  }
