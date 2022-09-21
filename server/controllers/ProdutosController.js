@@ -72,7 +72,8 @@ async function editarProduto(req, res) {
     const patch = `/images/${imagem}`
 
         const produto = await Product.findById(id)
-        nome && descricao && preco && categoria && imagem && patch ?
+        
+        imagem && patch ?
 
             (await produto.updateOne({
                 nome,
