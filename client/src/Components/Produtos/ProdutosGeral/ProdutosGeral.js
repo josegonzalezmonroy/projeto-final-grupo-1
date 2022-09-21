@@ -18,21 +18,21 @@ export default function ProdutosGeral() {
   return (
     <div>
       <h2>Veja os nossos produtos</h2>
-<div className="cards">
+<div className="cards vejaProdutos">
         {produtos.map((produto) => {
           return (
-            <div className="card-item" key={produto._id}>
+            <div className="osCards" key={produto._id}>
               <Card className="Card">
                 <Card.Img
                   variant="top"
                   src={host + produto.patch} />
                 <Card.Body>
-                  <Card.Title>{produto.nome}</Card.Title>
+                  <Card.Title className="cart">{produto.nome}</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">
                     R$ {produto.preco}
                   </Card.Subtitle>
                   <Link to={`/detalhes/${produto._id}`}>
-                    <div className="produtoelas">
+                    <div className="produtoelas botaoAlign">
                       <Button
                         size="sm"
                         variant="dark">Ver Detalhes

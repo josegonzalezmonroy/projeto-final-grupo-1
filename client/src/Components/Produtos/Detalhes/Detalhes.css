@@ -10,40 +10,58 @@ h2 {
 
 }
 
+.linha{
+  border: 1px solid #ccc;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.card-title{
+  line-height: 2.5;
+}
+
 .subt {
-    margin-top: -1em;
+    margin: 0 0 20px;
 }
 
 .card-cor {
     text-align: center;
+    line-height: 2.5;
 }
 
 .card-tamanho {
     text-align: center;
+    line-height: 2.5;
 }
 
 .card-nome {
     text-align: center;
     padding-top: 1px;
+    line-height: 2.5;
 }
 
 .card-preco {
     padding-top: 10px;
     text-align: center;
+    line-height: 2.5;
 }
 
 .align-title {
     display: flex;
     justify-content: center;
+    border-bottom: 2px solid #ccc;
+    margin: 0 0 20px;
 }
 
 .card-texto {
     text-align: center;
     padding-top: 10px;
+    line-height: 2.5;
 }
 
 .frete {
     text-align: center;
+    line-height: 2.5;
 }
 
 .Pagamento {
@@ -52,12 +70,13 @@ h2 {
 
 .card-body {
     padding: 0 30px !important;
-    width: 200px;
+    width: 350px;
     float: right;
 }
 
 .estrelas {
     text-align: center;
+    line-height: 2.5;
 }
 
 .card-item {
@@ -75,9 +94,18 @@ h2 {
     margin: 0 auto;
 }
 
+.card-body{
+  margin: 10px 0;
+}
+
 .card-image {
     width: 600px;
     margin-right: 200px;
+    border-radius: 10px;
+}
+
+.card-text{
+  text-align: left;
 }
 
 .vazio {

@@ -40,13 +40,13 @@ export default function ListarProdutosPainel() {
                 {!confirmar ?
                     (produtos.map((produto) => {
                         return (
-                            <div className="card-item cardItem" key={produto._id}>
+                            <div className="kart" key={produto._id}>
                                 <Card className="Card">
                                     <Card.Img variant="top" src={host + produto.patch}
                                     />
                                     <Card.Body>
-                                        <Card.Title>{produto.nome}</Card.Title>
-                                        <Card.Subtitle className="mb-2 text-muted">R$ {produto.preco}</Card.Subtitle>
+                                        <Card.Title className="titleCart">{produto.nome}</Card.Title>
+                                        <Card.Subtitle className="mb-3 mt-3 text-muted">R$ {produto.preco}</Card.Subtitle>
                                         <Card.Text>{produto.descricao}</Card.Text>
                                         <div className="alignButton">
                                             <Link to={`/${produto._id}`}>

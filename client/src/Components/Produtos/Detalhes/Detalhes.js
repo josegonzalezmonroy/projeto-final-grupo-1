@@ -63,31 +63,33 @@ export default function Detalhes() {
                     </div>
                                       
                     <div className="center">
+                    <div className="linha"></div>
                       <div className="card-nome">
-                        <Card.Title>
-                          Nome: {produto.nome}
+                        <Card.Title className="card-title">
+                          {produto.nome}
                         </Card.Title>
                       </div>
-                      
+                      <div className="linha"></div>
                       <div className="card-preco">
                         <Card.Subtitle >
-                          Preço: R$ {produto.preco}
+                          R$ {produto.preco}
                         </Card.Subtitle>
                       </div>
-                      
+                      <div className="linha"></div>
                       <div className="card-texto">
-                        <Card.Text>
-                          Descrição: {produto.descricao}
+                        <Card.Text className="card-text">
+                          {produto.descricao}
                         </Card.Text>
                       </div>
-                      
+                      <div className="linha"></div>
                       <div className="card-cor">
                         Cor: {produto.cor}
                       </div>
-                      
+                      <div className="linha"></div>
                       <div className="card-tamanho">
                         Tamanho: {produto.tamanho}
                       </div>
+                      <div className="linha"></div>
                       <p className="frete">
                         <strong>
                           <i>Frete grátis</i>

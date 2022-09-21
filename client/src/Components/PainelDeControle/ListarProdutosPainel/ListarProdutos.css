@@ -37,7 +37,8 @@ height: 1em;
 }
 
 .cadastro{
-    margin: 0.2em;
+    margin: 30px auto;
+    width: 155px;
 }
 
 .painel{
@@ -46,8 +47,18 @@ height: 1em;
 
 .alignButton{
     display: flex;
+    justify-content: center;
 }
 
 .spaceButton{
     margin: 0 20px 20px 0;
+}
+
+.titleCart{
+    line-height: 1.5 !important;
+    margin: 10px 0;
+}
+
+.kart{
+    margin: 20px;
 }
