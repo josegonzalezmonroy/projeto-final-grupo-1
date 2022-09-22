@@ -10,9 +10,7 @@ export default function Carrinho() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  const { carrinho, adicionarProduto, removerProduto, limparCarrinho } =
-    useContext(CarrinhoContext);
+  const { carrinho, adicionarProduto, removerProduto, limparCarrinho, valorTotal } = useContext(CarrinhoContext)
   const [quantidade, setQuantidade] = useState(1);
 
   const host = "http://localhost:3001/";
@@ -23,8 +21,10 @@ export default function Carrinho() {
   });
 
   const diminuirQuantidade = (produto) => {
-    setQuantidade(quantidade - 1);
-    adicionarProduto(produto, quantidade - 1);
+    if (quantidade === 1) { return null } else {
+      setQuantidade(quantidade - 1)
+      adicionarProduto(produto, quantidade - 1)
+    }
   };
 
   const aumentarQuantidade = (produto) => {
@@ -84,14 +84,6 @@ export default function Carrinho() {
                       >
                         +
                       </Button>
-
-                      <div className="Pagamento">
-                        <Link to="/pagamento">
-                          <Button size="sm" variant="dark">
-                            Compre agora
-                          </Button>
-                        </Link>
-                      </div>
                     </div>
                     <Button
                       className="btn-rem"
@@ -108,9 +100,12 @@ export default function Carrinho() {
           })}
         </div>
       </div>
-
       <div className="botao-remov">
-        <Button
+
+        <div className="valor-total">
+          <h3>Valor total: {valorTotal()}</h3>
+        </div>
+        <Button className="esvaziar-carrinho"
           variant="secondary"
           size="sm"
           onClick={() => {
@@ -120,11 +115,11 @@ export default function Carrinho() {
           Esvaziar carrinho
         </Button>
 
-        {/*} <Link to="/pagamento">
-                          <Button size="sm" variant="dark">
-                            Compre agora
-                          </Button>
-        </Link> */}
+        <Link to="/pagamento" className="compre-agora">
+          <Button size="sm" variant="dark">
+            Compre agora
+          </Button>
+        </Link>
       </div>
 
       <Modal show={show} onHide={handleClose}>
@@ -132,7 +127,6 @@ export default function Carrinho() {
           <Modal.Title>Deseja excluir todos os items do carrinho?</Modal.Title>
         </Modal.Header>
         <Modal.Footer>
-<<<<<<< HEAD
           <Button variant="secondary" onClick={handleClose}>
             Cancelar
           </Button>
@@ -145,16 +139,7 @@ export default function Carrinho() {
           >
             Confirmar
           </Button>
-=======
-        <Button variant="secondary" onClick={handleClose}>
-          Cancelar
-        </Button>
-        <Button variant="dark" onClick={()=>{
-          handleClose()
-          limparCarrinho()}}>
-          Confirmar
-        </Button>
->>>>>>> 70537e1d5e89d9119174a6a73fd5be63f003aff4
+
         </Modal.Footer>
       </Modal>
     </>

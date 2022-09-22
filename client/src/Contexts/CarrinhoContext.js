@@ -14,13 +14,7 @@ export default function CarrinhoProvider({ children }) {
         setCarrinho(novoCarrinho)
     }
 
-    console.log('Carrinho: ', carrinho)
     const limparCarrinho = () => setCarrinho([])//funcao para limpar o carrinho
-
-    const estaNoCarrinho = (id) =>
-        carrinho.find(
-            produto => produto.id === id)
-            ? true : false
 
     const removerProduto = (id) => {
         setCarrinho(carrinho.filter(
@@ -28,11 +22,17 @@ export default function CarrinhoProvider({ children }) {
         ))
     }
 
+    const valorTotal = () => {
+        return carrinho.reduce(
+            (anterior, actual) => anterior + actual.quantidade * actual.preco, 0
+        )
+    }
+
     const funcoesCarrinho = {
         adicionarProduto,
         limparCarrinho,
-        estaNoCarrinho,
-        removerProduto, 
+        removerProduto,
+        valorTotal,
         carrinho
     }
     return (

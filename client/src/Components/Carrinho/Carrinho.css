@@ -27,8 +27,13 @@
 
 .botao-remov{
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
+    align-items: center;
     margin: 1em;
+}
+
+.compre-agora, .esvaziar-carrinho, .valor-total{
+    margin: 1rem;
 }
 
 .items-carrinho{
