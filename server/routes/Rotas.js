@@ -12,11 +12,4 @@ router.patch('/:id', produtos.editarProduto)
 router.patch('/editarsem/:id', produtos.editarProdutoSem) //edit sem img
 router.delete('/:id', produtos.excluirProduto)
 
-//........................CARRINHO........................//
-router.get('/carrinho/lista', carrinho.mostrarCarrinho)
-router.post('/carrinho/adicionar', carrinho.adicionarItem)
-router.patch('/carrinho/modificar/:id', carrinho.modificarItem)
-router.delete('/carrinho/apagar/:id', carrinho.excluirItem)
-router.delete('/carrinho/apagartodos', carrinho.apagarTodos)
-
 module.exports = router 
