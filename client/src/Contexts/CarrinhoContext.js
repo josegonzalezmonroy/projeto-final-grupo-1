@@ -17,10 +17,10 @@ export default function CarrinhoProvider({ children }) {
     console.log('Carrinho: ', carrinho)
     const limparCarrinho = () => setCarrinho([])//funcao para limpar o carrinho
 
-    const estaNoCarrinho = (id) =>
-        carrinho.find(
-            produto => produto.id === id)
-            ? true : false
+ //   const estaNoCarrinho = (id) =>
+   //     carrinho.find(
+    //        produto => produto.id === id)
+     //       ? true : false
 
     const removerProduto = (id) => {
         setCarrinho(carrinho.filter(
@@ -28,10 +28,12 @@ export default function CarrinhoProvider({ children }) {
         ))
     }
 
+    
+
     const funcoesCarrinho = {
         adicionarProduto,
         limparCarrinho,
-        estaNoCarrinho,
+     //   estaNoCarrinho,
         removerProduto, 
         carrinho
     }
