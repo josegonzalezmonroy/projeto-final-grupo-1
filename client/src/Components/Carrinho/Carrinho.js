@@ -103,7 +103,7 @@ export default function Carrinho() {
         <Button variant="secondary" onClick={handleClose}>
           Cancelar
         </Button>
-        <Button variant="primary" onClick={()=>{
+        <Button variant="dark" onClick={()=>{
           handleClose()
           limparCarrinho()}}>
           Confirmar

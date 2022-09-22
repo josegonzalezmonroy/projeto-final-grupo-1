@@ -64,9 +64,9 @@ export default function ListarProdutosPainel() {
                                     <Card.Text>{produto.descricao}</Card.Text>
                                     <div className="alignButton">
                                         <Link to={`/${produto._id}`}>
-                                            <Button className="spaceButton" variant="dark" size="sm">Editar</Button>
+                                            <Button className="botao" variant="dark" size="sm">Editar</Button>
                                         </Link>
-                                        <Button className="spaceButton" variant="secondary" size="sm" onClick={() => {
+                                        <Button className="botao" variant="secondary" size="sm" onClick={() => {
                                             setIdProduto(produto._id)
                                             handleShow()
                                         }}>Excluir</Button>
@@ -83,10 +83,10 @@ export default function ListarProdutosPainel() {
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
+                        <Button  variant="secondary" onClick={handleClose}>
                             Cancelar
                         </Button>
-                        <Button variant="primary" onClick={() => {
+                        <Button variant="dark" onClick={() => {
                             handleClose()
                             excluirProduto(idProduto)
                         }}>Confirmar</Button>

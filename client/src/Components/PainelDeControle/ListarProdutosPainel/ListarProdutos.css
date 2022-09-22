@@ -57,7 +57,7 @@ height: 2em;
 
 .alignButton{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .spaceButton{

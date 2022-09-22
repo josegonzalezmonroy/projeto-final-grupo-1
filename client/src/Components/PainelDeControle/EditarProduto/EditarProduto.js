@@ -22,7 +22,7 @@ export default function EditarProduto() {
         fetch(host + id)
             .then(response => response.json())
             .then(listaProdutos => setProdutos(listaProdutos))
-    },[id])
+    }, [id])
 
     const editar = () => {
         inputImg ? editarSem() : editarCom()
@@ -85,14 +85,14 @@ export default function EditarProduto() {
                                 <Form.Group className="mb-3"
                                     id="name">
                                     <Form.Label className="label">Nome</Form.Label>
-                                    <Form.Control className="input"  type="text" placeholder="Digite o nome do produto..."
+                                    <Form.Control className="input" type="text" placeholder="Digite o nome do produto..."
                                         defaultValue={produto.nome} onChange={e => setNome(e.target.value)} />
                                     <Form.Text className="text-muted"></Form.Text>
                                 </Form.Group>
- 
+
                                 <Form.Group className="mb-3" id="price">
                                     <Form.Label className="label">Preço</Form.Label>
-                                    <Form.Control className="input"  type="number" placeholder="Digite o preço do produto..."
+                                    <Form.Control className="input" type="number" placeholder="Digite o preço do produto..."
                                         defaultValue={produto.preco} onChange={e => setPreco(e.target.value)} />
                                     <Form.Text className="text-muted"></Form.Text>
                                 </Form.Group>
@@ -110,14 +110,14 @@ export default function EditarProduto() {
                                         defaultValue={produto.cor} onChange={e => setCor(e.target.value)} />
                                     <Form.Text className="text-muted"></Form.Text>
                                 </Form.Group>
-                                
+
                                 <Form.Group className="mb-3" id="size">
                                     <Form.Label className="label">Tamanho</Form.Label>
                                     <Form.Control className="input" type="text" placeholder="Digite o tamanho do produto..."
                                         defaultValue={produto.tamanho} onChange={e => setTamanho(e.target.value)} />
                                     <Form.Text className="text-muted"></Form.Text>
                                 </Form.Group>
-                                
+
                                 <Form.Group className="mb-3">
                                     <Form.Label className="label">Categoria</Form.Label>
                                     <Form.Select className="inputC"
@@ -130,9 +130,9 @@ export default function EditarProduto() {
                                         <option value="eles">Eles</option>
                                     </Form.Select>
                                 </Form.Group>
-                                <div className="bot_Cad">
+                                <div ClassName="botao" >
                                     <Link to='/paineldecontrole'>
-                                        <Button variant="dark" size="sm" type="submit" onClick={editar}>Editar</Button>
+                                        <Button ClassName="botao" variant="dark" size="sm" type="submit" onClick={editar}>Editar</Button>
                                     </Link>
                                 </div>
                             </Form>
