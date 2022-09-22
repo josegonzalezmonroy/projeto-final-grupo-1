@@ -4,14 +4,20 @@
     box-sizing: border-box;
 }
 
-h2 {
-    font-weight: bold;
+.butique {
+    font-weight:lighter;
     text-align: center;
-    margin-top: 1em;
+    margin-top: 0.5em;
+    text-transform: uppercase;
+}
+
+.butique:hover{
+    text-decoration:underline;
 }
 
 .Card {
     width: 350px;
+    border-radius: 0%;
 }
 
 .cart{
@@ -23,8 +29,9 @@ Button {
 }
 
 .vejaProdutos{
-    width: 1200px;
-    margin: 0 auto;
+    width: 75em;
+    margin: auto;
+    justify-content: center;
 }
 
 .osCards{

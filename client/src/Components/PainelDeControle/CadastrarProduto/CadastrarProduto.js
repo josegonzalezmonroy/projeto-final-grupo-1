@@ -75,7 +75,7 @@ export default function CadastrarProduto() {
 
     return (
         <div>
-            <h2 className="font-weight-bold text-center">Cadastrar Produto</h2>
+            <h2 className="text-center">Cadastrar Produto</h2>
 
             <Form className="formulario" id="formularioCadastro">
 

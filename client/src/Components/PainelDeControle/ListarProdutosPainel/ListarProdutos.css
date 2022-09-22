@@ -7,8 +7,7 @@
 .cards, .confirmar{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    
+    justify-content: center;  
 }
 
 .conf{
@@ -21,7 +20,6 @@ border-radius: 1em;
 padding: 2em;
 height: 1em;
 }
-
 
 .card-item {
     margin: 0.75em;
@@ -37,8 +35,20 @@ height: 1em;
 }
 
 .cadastro{
-    margin: 30px auto;
-    width: 155px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    margin: auto;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size:1.4em;
+    color: black;
+}
+
+.cadastro:hover {
+    color: black;
+    text-decoration:underline;
 }
 
 .painel{

@@ -17,7 +17,7 @@ export default function ProdutosGeral() {
 
   return (
     <div>
-      <h2>Veja os nossos produtos</h2>
+      <h3 className="butique">Butique</h3>
 <div className="cards vejaProdutos">
         {produtos.map((produto) => {
           return (

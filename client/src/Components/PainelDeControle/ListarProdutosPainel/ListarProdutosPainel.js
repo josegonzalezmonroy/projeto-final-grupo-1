@@ -29,12 +29,8 @@ export default function ListarProdutosPainel() {
 
     return (
         <div className="painel">
-            <Link to="/paineldecontrole/cadastrarproduto">
-                <div className="cadastro">
-                    <Button variant="dark">
-                        Cadastrar produto
-                    </Button>
-                </div>
+            <Link className="cadastro" to="/paineldecontrole/cadastrarproduto">
+              Cadastrar produto
             </Link>
             <div className="cards cardsItem">
                 {!confirmar ?

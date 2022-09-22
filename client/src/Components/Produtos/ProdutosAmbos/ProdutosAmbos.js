@@ -21,7 +21,7 @@ export default function Produtos() {
 
   return (
     <div>
-      <h2>{`Produtos para ${categoria}`}</h2>
+      <h3 className="butique">{`Butique  ${ categoria}`}</h3>
 
       <div className="cards elesElas">
         {produtos.map((produto) => {
