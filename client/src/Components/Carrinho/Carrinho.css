@@ -1,22 +1,47 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-.produtcar{
-    color:white;
-    display: flex;
-    margin-left: 76em;
-    margin-top: -5em;
-
+.carrinho{
+    display: flex
 }
 
-.botao-remov{
+.produtos {
     display: flex;
-    margin-top: 25em;
-    align-items: center;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
     justify-content: center;
-    margin-block-end: 1em;
+}
+
+.card-carrinho{
+    display:flex;
+    flex-direction: row;
+
+}
+.imagem-carrinho{
+    height: 5rem;
+    width: auto;
+}
+.corpo-carrinho{
+    display: flex;
+    align-items: center;
+    width: 40rem;
+    justify-content: space-between;
+}
+
+.titulo-carrinho{
+    width: 20rem;
+}
+
+.preco-carrinho{
+    width: 8rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.quantidade-carrinho{
+    width: 12rem;
 }

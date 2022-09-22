@@ -13,25 +13,28 @@ import ProdutosAmbos from "./Components/Produtos/ProdutosAmbos/ProdutosAmbos";
 import ProdutosGeral from "./Components/Produtos/ProdutosGeral/ProdutosGeral";
 import Categoria from "./Components/Produtos/Categoria/Categoria";
 import Carrinho from "./Components/Carrinho/Carrinho";
+import CarrinhoProvider from "./Contexts/CarrinhoContext";
 
 export default function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/listaprodutos" element={<ProdutosGeral />} />
-        <Route path="/detalhes/:id" element={<Detalhes />} />
-        <Route path="/eles" element={<ProdutosAmbos />} />
-        <Route path="/elas" element={<ProdutosAmbos />} />
-        <Route path="/categoria" element={<Categoria />} />
-        <Route path="/paineldecontrole" element={<ListarProdutosPainel />} />
-        <Route path="/paineldecontrole/cadastrarproduto" element={<CadastrarProduto />} />
-        <Route path="/:id" element={<EditarProduto />} />
-        <Route path="/pagamento" element={<Pagamento />} />
-        <Route path="/carrinho" element={<Carrinho />} />
-      </Routes>
-      <Footer />
-          </BrowserRouter>
+      <CarrinhoProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/listaprodutos" element={<ProdutosGeral />} />
+          <Route path="/detalhes/:id" element={<Detalhes />} />
+          <Route path="/eles" element={<ProdutosAmbos />} />
+          <Route path="/elas" element={<ProdutosAmbos />} />
+          <Route path="/categoria" element={<Categoria />} />
+          <Route path="/paineldecontrole" element={<ListarProdutosPainel />} />
+          <Route path="/paineldecontrole/cadastrarproduto" element={<CadastrarProduto />} />
+          <Route path="/:id" element={<EditarProduto />} />
+          <Route path="/pagamento" element={<Pagamento />} />
+          <Route path="/carrinho" element={<Carrinho />} />
+        </Routes>
+        <Footer />
+      </CarrinhoProvider>
+    </BrowserRouter>
   );
 }

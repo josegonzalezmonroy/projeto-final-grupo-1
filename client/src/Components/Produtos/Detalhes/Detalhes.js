@@ -1,23 +1,33 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Button, Card } from "react-bootstrap";
 import { Rating, Box, ButtonGroup, Badge } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./Detalhes.css";
+import { CarrinhoContext } from "../../../Contexts/CarrinhoContext";
+
 export default function Detalhes() {
+
+  const {adicionarProduto} = useContext(CarrinhoContext)
+  const { id } = useParams()
   const [produtos, setProdutos] = useState([]);
-  const [ratingValue, setRatingValue] = React.useState(0); //configurando as estrelinhas da avaliação dos clientes
-  //Carinho de compras
-  const [itemCount, setItemCount] = React.useState(1);
+  const [ratingValue, setRatingValue] = useState(0); //configurando as estrelinhas da avaliação dos clientes
+  const [itemCount, setItemCount] = useState(0);//Carinho de compras
   const host = "http://localhost:3001/";
+  const [adicionadoAoCarrinho, setAdicionadoAoCarrinho ]=useState(false)
+
   useEffect(() => {
     fetch(host + id)
       .then((response) => response.json())
       .then((listaProdutos) => setProdutos(listaProdutos));
-  });
-  const urlId = window.location.pathname;
-  const id = urlId.substring(10, urlId.length); //Para pegar um elemento e seus detalhes
+  }, [id]);
+  
+  const adicionarAoCarrinho =(produto) =>{
+    setItemCount(itemCount + 1);
+    adicionarProduto(produto, 1)
+    setAdicionadoAoCarrinho(true)
+  }
+  console.log(adicionadoAoCarrinho)
   return (
     <>
       <nav className="menu">
@@ -55,7 +65,7 @@ export default function Detalhes() {
                         <Rating
                           name="Rating Label"
                           value={ratingValue}
-                          onChange={(event, newValue) => {
+                          onChange={(newValue) => {
                             setRatingValue(newValue);
                           }}
                         />
@@ -108,17 +118,23 @@ export default function Detalhes() {
                       <div className="botoes">
                         <ButtonGroup className="grupo-botoes">
                           <div className="botao-mais">
-                            <Button
-                              variant="secondary"
+                           {!adicionadoAoCarrinho?
+                           <Button
+                              variant="dark"
                               size="sm"
-                              onClick={() => {
-                                setItemCount(itemCount + 1);
-                              }}
-                            >
+                              onClick={()=>adicionarAoCarrinho(produto)}
+                              >
                               Adicionar ao carrinho
-                            </Button>
+                            </Button>:
+                            <Button
+                            variant="secondary"
+                            size="sm"
+                            >
+                            Adicionado ao carrinho
+                          </Button>
+                            }
                           </div>
-                          <Link to="/Pagamento">
+                          <Link to="/pagamento">
                             <div className="Pagamento">
                               <Button size="sm" variant="dark">
                                 Comprar

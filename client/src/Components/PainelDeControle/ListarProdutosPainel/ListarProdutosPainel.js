@@ -9,16 +9,21 @@ export default function ListarProdutosPainel() {
     const host = 'http://localhost:3001/'
 
     useEffect(() => {
-        fetch(host)
+        atualizarData()
+    }, [])
+
+    const atualizarData = async () => {
+        await fetch(host)
             .then(response => response.json())
             .then(listaProdutos => setProdutos(listaProdutos))
-    })
+    }
 
     const excluirProduto = async (id) => {
 
         fetch(host + id, {
             method: 'DELETE'
         }).then(setConfirmar(false))
+        .then(atualizarData)
     }
 
     const [confirmar, setConfirmar] = useState(false)
@@ -30,7 +35,7 @@ export default function ListarProdutosPainel() {
     return (
         <div className="painel">
             <Link className="cadastro" to="/paineldecontrole/cadastrarproduto">
-              Cadastrar produto
+                Cadastrar produto
             </Link>
             <div className="cards cardsItem">
                 {!confirmar ?
@@ -64,7 +69,7 @@ export default function ListarProdutosPainel() {
                     )) :
                     <div className="confirmar">
                         <div className="conf">
-                        <p><strong>Tem certeza que deseja excluir este produto?</strong></p>
+                            <p><strong>Tem certeza que deseja excluir este produto?</strong></p>
                         </div>
                         <Card className="Card">
                             <Card.Img variant="top" src={imagem} />
@@ -72,9 +77,9 @@ export default function ListarProdutosPainel() {
                                 <Card.Title>{nome}</Card.Title>
                                 <Card.Subtitle className="mb-2 text-muted">R$ {preco}</Card.Subtitle>
 
-<div className="bot_ex">
-                                <Button variant="secondary" size="sm" onClick={() => excluirProduto(idProduto)}>Excluir</Button>
-                                <Button variant="secondary" size="sm" onClick={() => setConfirmar(false)}>Cancelar</Button>
+                                <div className="bot_ex">
+                                    <Button variant="secondary" size="sm" onClick={() => excluirProduto(idProduto)}>Excluir</Button>
+                                    <Button variant="secondary" size="sm" onClick={() => setConfirmar(false)}>Cancelar</Button>
                                 </div>
                             </Card.Body>
                         </Card>

@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./EditarProduto.css"
 
 export default function EditarProduto() {
 
+    const { id } = useParams()
     const [produtos, setProdutos] = useState([])
     const [nome, setNome] = useState()
     const [preco, setPreco] = useState()
@@ -16,14 +17,12 @@ export default function EditarProduto() {
     const [inputImg, setInputImg] = useState(true)
 
     const host = 'http://localhost:3001/'
-    const pathname = window.location.pathname
-    const id = pathname.substring(1, pathname.length)
 
     useEffect(() => {
         fetch(host + id)
             .then(response => response.json())
             .then(listaProdutos => setProdutos(listaProdutos))
-    })
+    },[id])
 
     const editar = () => {
         inputImg ? editarSem() : editarCom()
