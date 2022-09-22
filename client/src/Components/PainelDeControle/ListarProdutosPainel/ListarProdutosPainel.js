@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react"
 import { Button, Card } from "react-bootstrap"
-import './ListarProdutos.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { Link } from 'react-router-dom'
+import './ListarProdutos.css'
 
 export default function ListarProdutosPainel() {
 
@@ -43,12 +45,14 @@ export default function ListarProdutosPainel() {
 
     return (
         <div className="painel">
-                <label>Buscar <input type='text' placeholder="Digite o nome do produto" value={buscarProdutos} onChange={(e) => {
-                    setBuscarProdutos(e.target.value)
-                }} /></label><br />
+
             <Link className="cadastro" to="/paineldecontrole/cadastrarproduto">
                 Cadastrar produto
             </Link>
+            <label className="lupa"><FontAwesomeIcon icon={faMagnifyingGlass} />
+                <input className="cuadro" type='text' placeholder="Procurar" value={buscarProdutos} onChange={(e) => {
+                    setBuscarProdutos(e.target.value)
+                }} /></label><br />
             <div className="cards cardsItem">
                 {!confirmar ?
                     (produtosFiltrados.map((produto) => {
