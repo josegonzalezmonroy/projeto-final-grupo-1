@@ -2,6 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import "./ProdutosGeral.css";
 
 export default function ProdutosGeral() {
@@ -27,7 +29,8 @@ export default function ProdutosGeral() {
   return (
     <div>
       <h3 className="butique">Butique</h3>
-      <label>Buscar <input type='text' placeholder="Digite o nome do produto" value={buscarProdutos} onChange={(e) => {
+      <label className="lupa"><FontAwesomeIcon icon={faMagnifyingGlass} />
+      <input className="cuadro" type='text' placeholder="Procurar" value={buscarProdutos} onChange={(e) => {
         setBuscarProdutos(e.target.value)
       }} /></label><br />
       
