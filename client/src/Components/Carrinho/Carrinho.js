@@ -132,6 +132,7 @@ export default function Carrinho() {
           <Modal.Title>Deseja excluir todos os items do carrinho?</Modal.Title>
         </Modal.Header>
         <Modal.Footer>
+<<<<<<< HEAD
           <Button variant="secondary" onClick={handleClose}>
             Cancelar
           </Button>
@@ -144,6 +145,16 @@ export default function Carrinho() {
           >
             Confirmar
           </Button>
+=======
+        <Button variant="secondary" onClick={handleClose}>
+          Cancelar
+        </Button>
+        <Button variant="dark" onClick={()=>{
+          handleClose()
+          limparCarrinho()}}>
+          Confirmar
+        </Button>
+>>>>>>> 70537e1d5e89d9119174a6a73fd5be63f003aff4
         </Modal.Footer>
       </Modal>
     </>

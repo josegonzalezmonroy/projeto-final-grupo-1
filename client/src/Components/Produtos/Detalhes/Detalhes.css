@@ -10,14 +10,14 @@ h2 {
 
 }
 
-.linha{
-  border: 1px solid #ccc;
-  width: 100%;
-  margin: 20px 0;
+.linha {
+    border: 1px solid #ccc;
+    width: 100%;
+    margin: 20px 0;
 }
 
-.card-title{
-  line-height: 2.5;
+.card-title {
+    line-height: 2.5;
 }
 
 .subt {
@@ -94,8 +94,8 @@ h2 {
     margin: 0 auto;
 }
 
-.card-body{
-  margin: 10px 0;
+.card-body {
+    margin: 10px 0;
 }
 
 .card-image {
@@ -104,8 +104,8 @@ h2 {
     border-radius: 10px;
 }
 
-.card-text{
-  text-align: left;
+.card-text {
+    text-align: left;
 }
 
 .vazio {
@@ -114,16 +114,20 @@ h2 {
 
 .cards {
     justify-content: flex-start;
-  }
+}
 
-  .center {
+.center {
     float: right;
-  }
-
+}
 
 .produtcar {
     color: white;
     display: flex;
     margin-left: 76em;
     margin-top: -5em;
+}
+
+.botao {
+    border-radius: 0;
+    text-transform: uppercase;
 }

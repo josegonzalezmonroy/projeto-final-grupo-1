@@ -2,11 +2,13 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
 import { Link, useParams } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import "./ProdutosAmbos.css";
 
 export default function Produtos() {
-  
-  const{categoria}=useParams()
+
+  const { categoria } = useParams()
   const [produtos, setProdutos] = useState([]);
   const [buscarProdutos, setBuscarProdutos] = useState("")
 
@@ -30,10 +32,11 @@ export default function Produtos() {
 
   return (
     <div>
-      <label>Buscar <input type='text' placeholder="Digite o nome do produto" value={buscarProdutos} onChange={(e) => {
-        setBuscarProdutos(e.target.value)
-      }} /></label><br />
       <h3 className="butique">{`Butique  ${categoria}`}</h3>
+      <label className="lupa"><FontAwesomeIcon icon={faMagnifyingGlass} />
+        <input className="cuadro" type='text' placeholder="Procurar" value={buscarProdutos} onChange={(e) => {
+          setBuscarProdutos(e.target.value)
+        }} /></label><br />
       <div className="cards elesElas">
         {produtosFiltrados.map((produto) => {
           return (

@@ -8,21 +8,21 @@ import { CarrinhoContext } from "../../../Contexts/CarrinhoContext";
 
 export default function Detalhes() {
 
-  const {adicionarProduto} = useContext(CarrinhoContext)
+  const { adicionarProduto } = useContext(CarrinhoContext)
   const { id } = useParams()
   const [produtos, setProdutos] = useState([]);
   const [ratingValue, setRatingValue] = useState(0); //configurando as estrelinhas da avaliação dos clientes
   const [itemCount, setItemCount] = useState(0);//Carinho de compras
   const host = "http://localhost:3001/";
-  const [adicionadoAoCarrinho, setAdicionadoAoCarrinho ]=useState(false)
+  const [adicionadoAoCarrinho, setAdicionadoAoCarrinho] = useState(false)
 
   useEffect(() => {
     fetch(host + id)
       .then((response) => response.json())
       .then((listaProdutos) => setProdutos(listaProdutos));
   }, [id]);
-  
-  const adicionarAoCarrinho =(produto) =>{
+
+  const adicionarAoCarrinho = (produto) => {
     setItemCount(itemCount + 1);
     adicionarProduto(produto, 1)
     setAdicionadoAoCarrinho(true)
@@ -38,7 +38,7 @@ export default function Detalhes() {
             </Badge>
           </Link>
         </div>
-      </nav>     
+      </nav>
       <div className="vazio">
         <div className="align-title">
           <h3 className="butique">Detalhes do produto</h3>
@@ -71,9 +71,9 @@ export default function Detalhes() {
                         />
                       </Box>
                     </div>
-                                      
+
                     <div className="center">
-                    <div className="linha"></div>
+                      <div className="linha"></div>
                       <div className="card-nome">
                         <Card.Title className="card-title">
                           {produto.nome}
@@ -100,12 +100,8 @@ export default function Detalhes() {
                         Tamanho: {produto.tamanho}
                       </div>
                       <div className="linha"></div>
-                      <p className="frete">
-                        <strong>
-                          <i>Frete grátis</i>
-                        </strong>
-                      </p>
-                    </div>      
+                     
+                    </div>
                     {/*Botões de adicionar ou remover Carinho de compras*/}
                     <div
                       style={{
@@ -118,29 +114,24 @@ export default function Detalhes() {
                       <div className="botoes">
                         <ButtonGroup className="grupo-botoes">
                           <div className="botao-mais">
-                           {!adicionadoAoCarrinho?
-                           <Button
-                              variant="dark"
-                              size="sm"
-                              onClick={()=>adicionarAoCarrinho(produto)}
+                            {!adicionadoAoCarrinho ?
+                              <Button
+                                className="botao"
+                                variant="dark"
+                                size="sm"
+                                onClick={() => adicionarAoCarrinho(produto)}
                               >
-                              Adicionar ao carrinho
-                            </Button>:
-                            <Button
-                            variant="secondary"
-                            size="sm"
-                            >
-                            Adicionado ao carrinho
-                          </Button>
+                                Adicionar ao carrinho
+                              </Button> :
+                              <Button
+                                className="botao"
+                                variant="secondary"
+                                size="sm"
+                              >
+                                Adicionado ao carrinho
+                              </Button>
                             }
                           </div>
-                          <Link to="/pagamento">
-                            <div className="Pagamento">
-                              <Button size="sm" variant="dark">
-                                Comprar
-                              </Button>
-                            </div>
-                          </Link>
                         </ButtonGroup>
                       </div>
                     </div>
