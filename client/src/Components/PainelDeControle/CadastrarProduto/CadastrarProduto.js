@@ -74,113 +74,114 @@ export default function CadastrarProduto() {
     }
 
     return (
-        <div>
+        <div className="marginCadastro">
             <h2 className="text-center">Cadastrar Produto</h2>
+            <div className="formCadastro">
+                <Form className="formularioCad" id="formularioCadastro">
 
-            <Form className="formulario" id="formularioCadastro">
-
-                <Form.Group className="mb-3"
-                    id="name">
-                    <Form.Label className="label">Nome</Form.Label>
-                    <Form.Control className="input"
-                        type="text"
-                        name="nome"
-                        placeholder="Digite o nome do produto..."
-                        defaultValue={nome} onChange={e => setNome(e.target.value)} />
-                    <Form.Text className="text-muted"></Form.Text>
-                </Form.Group>
+                    <Form.Group className="mb-3"
+                        id="name">
+                        <Form.Label className="label">Nome</Form.Label>
+                        <Form.Control className="input"
+                            type="text"
+                            name="nome"
+                            placeholder="Digite o nome do produto..."
+                            defaultValue={nome} onChange={e => setNome(e.target.value)} />
+                        <Form.Text className="text-muted"></Form.Text>
+                    </Form.Group>
 
 
-                <Form.Group className="mb-3" name="preco">
-                    <Form.Label className="label">Preço</Form.Label>
-                    <Form.Control className="input"
-                        type="number"
-                        name="preco"
-                        placeholder="Digite o preço do produto..."
-                        onChange={e => setPreco(e.target.value)} />
-                    <Form.Text className="text-muted"></Form.Text>
-                </Form.Group>
+                    <Form.Group className="mb-3" name="preco">
+                        <Form.Label className="label">Preço</Form.Label>
+                        <Form.Control className="input"
+                            type="number"
+                            name="preco"
+                            placeholder="Digite o preço do produto..."
+                            onChange={e => setPreco(e.target.value)} />
+                        <Form.Text className="text-muted"></Form.Text>
+                    </Form.Group>
 
-                <Form.Group className="mb-3">
-                    <Form.Label className="label">Descrição</Form.Label>
-                    <Form.Control className="input"
-                        type="text"
-                        name="descricao"
-                        placeholder="Descreva o produto..."
-                        onChange={e => setDescricao(e.target.value)} />
-                    <Form.Text className="text-muted"></Form.Text>
-                </Form.Group>
+                    <Form.Group className="mb-3">
+                        <Form.Label className="label">Descrição</Form.Label>
+                        <Form.Control className="input"
+                            type="text"
+                            name="descricao"
+                            placeholder="Descreva o produto..."
+                            onChange={e => setDescricao(e.target.value)} />
+                        <Form.Text className="text-muted"></Form.Text>
+                    </Form.Group>
 
-                <Form.Group className="mb-3">
-                    <Form.Label className="label">Cor</Form.Label>
-                    <Form.Select className="inputC"
-                        value={cor}
-                        name="cor"
-                        onChange={e => setCor(e.target.value)}
-                        aria-label="Default select example">
-                        <option>Selecione uma cor</option>
-                        <option value="branca">Branco</option>
-                        <option value="preta">Preto</option>
-                        <option value="caramelo">Caramelo</option>
-                        <option value="laranja">Laranja</option>
-                    </Form.Select>
-                </Form.Group>
+                    <Form.Group className="mb-3">
+                        <Form.Label className="label">Cor</Form.Label>
+                        <Form.Select className="inputC"
+                            value={cor}
+                            name="cor"
+                            onChange={e => setCor(e.target.value)}
+                            aria-label="Default select example">
+                            <option>Selecione uma cor do produto...</option>
+                            <option value="branca">Branco</option>
+                            <option value="preta">Preto</option>
+                            <option value="caramelo">Caramelo</option>
+                            <option value="laranja">Laranja</option>
+                        </Form.Select>
+                    </Form.Group>
 
-                <Form.Group className="mb-3">
-                    <Form.Label className="label">Tamanho</Form.Label>
-                    <Form.Select className="inputC"
-                        value={tamanho}
-                        name="tamanho"
-                        onChange={e => setTamanho(e.target.value)}
-                        aria-label="Default select example">
-                        <option>Selecione um Tamanho</option>
-                        <option value="PP">PP</option>
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">G</option>
-                        <option value="GG">GG</option>
-                        <option value="XGG">XGG</option>
-                    </Form.Select>
-                </Form.Group>
+                    <Form.Group className="mb-3">
+                        <Form.Label className="label">Tamanho</Form.Label>
+                        <Form.Select className="inputC"
+                            value={tamanho}
+                            name="tamanho"
+                            onChange={e => setTamanho(e.target.value)}
+                            aria-label="Default select example">
+                            <option>Selecione um tamanho do produto...</option>
+                            <option value="PP">PP</option>
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                            <option value="XGG">XGG</option>
+                        </Form.Select>
+                    </Form.Group>
 
-                <Form.Group className="mb-3">
-                    <Form.Label className="label">Categoria</Form.Label>
-                    <Form.Select className="inputC"
-                        value={categoria}
-                        name="categoria"
-                        onChange={e => setCategoria(e.target.value)}
-                        aria-label="Default select example">
-                        <option>Selecione uma categoria</option>
-                        <option value="elas">Elas</option>
-                        <option value="eles">Eles</option>
-                    </Form.Select>
-                </Form.Group>
+                    <Form.Group className="mb-3">
+                        <Form.Label className="label">Categoria</Form.Label>
+                        <Form.Select className="inputC"
+                            value={categoria}
+                            name="categoria"
+                            onChange={e => setCategoria(e.target.value)}
+                            aria-label="Default select example">
+                            <option>Selecione uma categoria</option>
+                            <option value="elas">Elas</option>
+                            <option value="eles">Eles</option>
+                        </Form.Select>
+                    </Form.Group>
 
-                <Form.Group controlId="formFile" className="mb-3">
-                    <Form.Label className="label">Inserir uma imagem</Form.Label>
-                    <Form.Control type="file" name="image"
-                        onChange={e => {
-                            setImagem(e.target.files[0])
-                            console.log(imagem)
-                        }}
-                    />
-                </Form.Group>
+                    <Form.Group controlId="formFile" className="mb-3">
+                        <Form.Label className="label">Inserir uma imagem</Form.Label>
+                        <Form.Control type="file" name="image"
+                            onChange={e => {
+                                setImagem(e.target.files[0])
+                                console.log(imagem)
+                            }}
+                        />
+                    </Form.Group>
 
-                {status.type === 'success' ? <p style={{ color: "green" }}>{status.mensagem}</p> : ""}
-                {status.type === 'error' ? <p style={{ color: "#ff0000" }}>{status.mensagem}</p> : ""}
+                    {status.type === 'success' ? <p style={{ color: "green" }}>{status.mensagem}</p> : ""}
+                    {status.type === 'error' ? <p style={{ color: "#ff0000" }}>{status.mensagem}</p> : ""}
 
-                <div className="bot_Cad">
-                    <Link to='/paineldecontrole'>
-                        <Button
-                            variant="dark"
-                            size="sm"
-                            type="submit"
-                            onClick={reqPost}>Cadastrar
-                        </Button>
-                    </Link>
-                </div>
+                    <div className="bot_Cad">
+                        <Link to='/paineldecontrole'>
+                            <Button
+                                variant="dark"
+                                size="sm"
+                                type="submit"
+                                onClick={reqPost}>Cadastrar
+                            </Button>
+                        </Link>
+                    </div>
 
-            </Form>
+                </Form>
+            </div>
         </div>
     )
 }

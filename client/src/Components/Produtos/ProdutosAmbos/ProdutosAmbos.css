@@ -26,3 +26,15 @@
     margin: 0 0 10px;
 }
 
+.marginCadastro{
+    margin: 30px auto;
+}
+
+.formCadastro{    
+    margin: 50px auto 86px;
+}
+
+.formularioCad{
+    max-width: 650px;
+    margin: 0 auto;
+}
