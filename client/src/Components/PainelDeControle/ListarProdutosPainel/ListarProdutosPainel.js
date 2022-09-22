@@ -72,10 +72,10 @@ export default function ListarProdutosPainel() {
                                 <Card.Title>{nome}</Card.Title>
                                 <Card.Subtitle className="mb-2 text-muted">R$ {preco}</Card.Subtitle>
 
-
+<div className="bot_ex">
                                 <Button variant="secondary" size="sm" onClick={() => excluirProduto(idProduto)}>Excluir</Button>
                                 <Button variant="secondary" size="sm" onClick={() => setConfirmar(false)}>Cancelar</Button>
-                                
+                                </div>
                             </Card.Body>
                         </Card>
                     </div>

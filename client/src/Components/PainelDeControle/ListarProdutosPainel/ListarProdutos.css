@@ -13,12 +13,12 @@
 .conf{
 color:white ;
 margin-top: 8em;
-margin-right: 4em;
-margin-left: 3em;
+margin-right: 2em;
+margin-left: 4em;
 background-color: red;
 border-radius: 1em;
 padding: 2em;
-height: 1em;
+height: 2em;
 }
 
 .card-item {
@@ -72,3 +72,10 @@ height: 1em;
 .kart{
     margin: 20px;
 }
+
+.bot_ex{
+     display: flex;
+    justify-content:space-evenly;
+    
+}
+    
