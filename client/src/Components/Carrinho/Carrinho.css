@@ -47,39 +47,4 @@
 }
 
 
-/*
-.card-carrinho{
-    display:flex;
-    flex-direction: ;
-    width: 3em;
 
-}
-.imagem-carrinho{
-   margin-left: 1em;
-    width: 15em;
-    margin: auto;
-    justify-content: center;
-    
-}
-.corpo-carrinho{
-    display: flex;
-    align-items: center;
-    width: 40rem;
-    justify-content: space-between;
-}
-
-.titulo-carrinho{
-    width: 15rem;
-}
-
-.preco-carrinho{
-    width: 5rem;
-    justify-content:center ;
-    align-items:center ;
-    flex-direction: column;
-}
-
-.quantidade-carrinho{
-    width: 12rem;
-}
-*/
