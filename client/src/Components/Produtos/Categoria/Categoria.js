@@ -9,11 +9,11 @@ const Categoria = () => {
     return (
         
         <div className="container__box">
-            <Link className='box' to="/elas">
+            <Link className='box' to="/categoria/elas">
                 <img src={ela} alt="ela" />
             </Link>
           
-            <Link className='box' to="/eles">
+            <Link className='box' to="/categoria/eles">
                 <img src={ele} alt="ele" />
             </Link>
         </div>

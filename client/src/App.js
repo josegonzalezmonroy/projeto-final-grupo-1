@@ -24,9 +24,8 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/listaprodutos" element={<ProdutosGeral />} />
           <Route path="/detalhes/:id" element={<Detalhes />} />
-          <Route path="/eles" element={<ProdutosAmbos />} />
-          <Route path="/elas" element={<ProdutosAmbos />} />
           <Route path="/categoria" element={<Categoria />} />
+          <Route path="/categoria/:categoria" element={<ProdutosAmbos />} />
           <Route path="/paineldecontrole" element={<ListarProdutosPainel />} />
           <Route path="/paineldecontrole/cadastrarproduto" element={<CadastrarProduto />} />
           <Route path="/:id" element={<EditarProduto />} />

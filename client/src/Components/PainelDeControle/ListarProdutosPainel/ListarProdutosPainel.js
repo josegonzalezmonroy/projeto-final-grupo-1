@@ -23,7 +23,7 @@ export default function ListarProdutosPainel() {
         fetch(host + id, {
             method: 'DELETE'
         }).then(setConfirmar(false))
-        .then(atualizarData)
+            .then(atualizarData)
     }
 
     const [confirmar, setConfirmar] = useState(false)
@@ -31,15 +31,27 @@ export default function ListarProdutosPainel() {
     const [nome, setNome] = useState()
     const [imagem, setImagem] = useState()
     const [preco, setPreco] = useState()
+    const [buscarProdutos, setBuscarProdutos] = useState("")
+
+    const produtosOrganizados = produtos.sort((a, b) => {//variavel para organizar os produtos por ordem alfabetica
+        return a.nome.localeCompare(b.nome)
+    }
+    )
+
+    const produtosFiltrados = produtosOrganizados.filter(//filtrar os produtos pela busca
+        (itens) => itens.nome.toLowerCase().includes(buscarProdutos.toLowerCase()))
 
     return (
         <div className="painel">
+                <label>Buscar <input type='text' placeholder="Digite o nome do produto" value={buscarProdutos} onChange={(e) => {
+                    setBuscarProdutos(e.target.value)
+                }} /></label><br />
             <Link className="cadastro" to="/paineldecontrole/cadastrarproduto">
                 Cadastrar produto
             </Link>
             <div className="cards cardsItem">
                 {!confirmar ?
-                    (produtos.map((produto) => {
+                    (produtosFiltrados.map((produto) => {
                         return (
                             <div className="kart" key={produto._id}>
                                 <Card className="Card">

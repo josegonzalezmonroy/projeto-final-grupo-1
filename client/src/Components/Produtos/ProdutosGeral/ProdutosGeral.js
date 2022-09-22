@@ -6,6 +6,7 @@ import "./ProdutosGeral.css";
 
 export default function ProdutosGeral() {
   const [produtos, setProdutos] = useState([]);
+  const [buscarProdutos, setBuscarProdutos] = useState("")
 
   const host = 'http://localhost:3001/'
 
@@ -13,13 +14,25 @@ export default function ProdutosGeral() {
     fetch(host)
       .then((response) => response.json())
       .then((listaProdutos) => setProdutos(listaProdutos));
-  });
+  }, []);
+
+  const produtosOrganizados = produtos.sort((a, b) => {//variavel para organizar os produtos por ordem alfabetica
+    return a.nome.localeCompare(b.nome)
+  }
+  )
+
+  const produtosFiltrados = produtosOrganizados.filter(//filtrar os produtos pela busca
+    (itens) => itens.nome.toLowerCase().includes(buscarProdutos.toLowerCase()))
 
   return (
     <div>
       <h3 className="butique">Butique</h3>
+      <label>Buscar <input type='text' placeholder="Digite o nome do produto" value={buscarProdutos} onChange={(e) => {
+        setBuscarProdutos(e.target.value)
+      }} /></label><br />
+      
       <div className="cards vejaProdutos">
-        {produtos.map((produto) => {
+        {produtosFiltrados.map((produto) => {
           return (
             <div className="osCards" key={produto._id}>
               <Card className="Card">
