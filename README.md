@@ -19,6 +19,11 @@
 - React-router-dom
 - Bootstrap/dist/css/bootstrap.min.css
 - Css
+- Mongoose
+- Muter
+- Express
+- Routes
+
 
 #### Para clonar o nosso projeto
 - [x] Temos duas pastas: 
