@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Button, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import "./ProdutosGeral.css";
 
@@ -18,7 +18,7 @@ export default function ProdutosGeral() {
   return (
     <div>
       <h3 className="butique">Butique</h3>
-<div className="cards vejaProdutos">
+      <div className="cards vejaProdutos">
         {produtos.map((produto) => {
           return (
             <div className="osCards" key={produto._id}>
@@ -31,13 +31,8 @@ export default function ProdutosGeral() {
                   <Card.Subtitle className="mb-2 text-muted">
                     R$ {produto.preco}
                   </Card.Subtitle>
-                  <Link to={`/detalhes/${produto._id}`}>
-                    <div className="produtoelas botaoAlign">
-                      <Button
-                        size="sm"
-                        variant="dark">Ver Detalhes
-                      </Button>
-                    </div>
+                  <Link className="detalhes" to={`/detalhes/${produto._id}`}>
+                    Ver Detalhes
                   </Link>
                 </Card.Body>
               </Card>

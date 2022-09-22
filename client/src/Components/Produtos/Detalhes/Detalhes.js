@@ -31,7 +31,7 @@ export default function Detalhes() {
       </nav>     
       <div className="vazio">
         <div className="align-title">
-          <h2 className="subt">Detalhes do produto</h2>
+          <h3 className="butique">Detalhes do produto</h3>
         </div>
         <div className="cards">
           {produtos.map((produto) => {

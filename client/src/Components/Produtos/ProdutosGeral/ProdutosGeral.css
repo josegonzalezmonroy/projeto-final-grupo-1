@@ -5,14 +5,14 @@
 }
 
 .butique {
-    font-weight:lighter;
+    font-weight: lighter;
     text-align: center;
     margin-top: 0.5em;
     text-transform: uppercase;
 }
 
-.butique:hover{
-    text-decoration:underline;
+.butique:hover {
+    text-decoration: underline;
 }
 
 .Card {
@@ -20,7 +20,7 @@
     border-radius: 0%;
 }
 
-.cart{
+.cart {
     line-height: normal;
 }
 
@@ -28,16 +28,29 @@ Button {
     font-size: xx-small;
 }
 
-.vejaProdutos{
+.vejaProdutos {
     width: 75em;
     margin: auto;
     justify-content: center;
 }
 
-.osCards{
+.osCards {
     margin: 20px;
 }
 
-.botaoAlign{
-    text-align: center;
+.detalhes {
+    color: rgb(65, 65, 65);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    border: 0.1em solid transparent;
+}
+
+.detalhes:hover {
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    border: 0.1em solid transparent;
 }
