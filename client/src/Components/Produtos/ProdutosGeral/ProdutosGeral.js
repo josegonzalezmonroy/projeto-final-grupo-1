@@ -30,7 +30,7 @@ export default function ProdutosGeral() {
     <div>
       <h3 className="butique">Butique</h3>
       <label className="lupa"><FontAwesomeIcon icon={faMagnifyingGlass} />
-      <input className="cuadro" type='text' placeholder="Procurar" value={buscarProdutos} onChange={(e) => {
+      <input className="quadro" type='text' placeholder="Procurar" value={buscarProdutos} onChange={(e) => {
         setBuscarProdutos(e.target.value)
       }} /></label><br />
       
