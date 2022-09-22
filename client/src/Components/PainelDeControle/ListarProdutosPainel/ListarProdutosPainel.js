@@ -11,7 +11,6 @@ export default function ListarProdutosPainel() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    //const [confirmar, setConfirmar] = useState(false)
     const [idProduto, setIdProduto] = useState()
     const [buscarProdutos, setBuscarProdutos] = useState("")
     const host = 'http://localhost:3001/'
